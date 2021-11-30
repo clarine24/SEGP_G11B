@@ -13,6 +13,12 @@
             android:name=".CBT_Game"
             android:exported="false" />
         <activity
+            android:name=".BT_prompt"
+            android:exported="true" />
+        <activity
+            android:name=".BT_main"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
