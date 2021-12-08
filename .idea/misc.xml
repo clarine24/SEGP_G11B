@@ -13,6 +13,11 @@
         <entry key="..\:/Users/shiha/AndroidStudioProjects/SEGP_G11B/app/src/main/res/layout/activity_breathing_technique_prompt.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/shiha/AndroidStudioProjects/SEGP_G11B/app/src/main/res/layout/activity_cbt_game.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/shiha/AndroidStudioProjects/SEGP_G11B/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/activity_breathing_technique_main.xml" value="0.28888888888888886" />
+        <entry key="app/src/main/res/layout/activity_breathing_technique_prompt.xml" value="0.28888888888888886" />
+        <entry key="app/src/main/res/layout/activity_cbt_game.xml" value="0.28888888888888886" />
+        <entry key="app/src/main/res/layout/activity_cbt_question_answer.xml" value="0.28888888888888886" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.28888888888888886" />
       </map>
     </option>
   </component>
