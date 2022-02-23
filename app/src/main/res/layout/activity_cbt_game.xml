@@ -102,7 +102,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/hbg_menu1"
+            android:id="@+id/hbg_menu"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -110,7 +110,56 @@
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/hbg_menu_icon" />
+            app:srcCompat="@drawable/hbg_menu_icon"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/hbg_menu_close"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/close_icon"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/hbg_menu_info"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="75dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/info_icon"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/hbg_menu_doc"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="140dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/doc_icon"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/hbg_menu_vol"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="205dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/vol_icon"
+            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/home_icon"
