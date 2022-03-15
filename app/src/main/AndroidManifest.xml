@@ -18,6 +18,22 @@
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
+            android:name=".CBT_sublevel_2"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".CBT_sublevel_3"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".CBT_sublevel_4"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".CBT_sublevel_5"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
             android:name=".BT_prompt"
             android:exported="true"
             android:launchMode="singleTask" />
