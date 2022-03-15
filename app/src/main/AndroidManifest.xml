@@ -14,6 +14,10 @@
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
+            android:name=".CBT_sublevel_1"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
             android:name=".BT_prompt"
             android:exported="true"
             android:launchMode="singleTask" />

@@ -1,35 +1,26 @@
 package com.example.rewire;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-public class CBT_Game extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CBT_sublevel_1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cbt_game);
+        setContentView(R.layout.activity_cbt_sublevel_1);
+        // update AndroidManifest.xml for each new .java file!
 
-        final Button level1_btn = findViewById(R.id.level1);
         final ImageView hbg_menu = findViewById(R.id.hbg_menu);
         final ImageView hbg_menu_info = findViewById(R.id.hbg_menu_info);
         final ImageView hbg_menu_vol = findViewById(R.id.hbg_menu_vol);
         final ImageView hbg_menu_doc = findViewById(R.id.hbg_menu_doc);
         final ImageView hbg_menu_close = findViewById(R.id.hbg_menu_close);
         final ImageView home_btn = findViewById(R.id.home_icon);
-
-        level1_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CBT_Game.this, CBT_sublevel_1.class);
-                startActivity(intent);
-            }
-        });
 
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
