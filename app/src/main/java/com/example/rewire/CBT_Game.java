@@ -1,54 +1,61 @@
 package com.example.rewire;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 
-public class CBT_Game extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CBT_Game extends AppCompatActivity implements View.OnClickListener{
+    public static int level = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cbt_game);
 
-        final ImageView hbg_menu = findViewById(R.id.hbg_menu);
-        final ImageView hbg_menu_info = findViewById(R.id.hbg_menu_info);
-        final ImageView hbg_menu_vol = findViewById(R.id.hbg_menu_vol);
-        final ImageView hbg_menu_doc = findViewById(R.id.hbg_menu_doc);
-        final ImageView hbg_menu_close = findViewById(R.id.hbg_menu_close);
-        final ImageView home_btn = findViewById(R.id.home_icon);
+        Header header = findViewById(R.id.header);
+        header.initHeader();
+        header.home_btn.setOnClickListener(v -> startActivity(header.toHomeMenu()));
 
-        home_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        final Button level1 = findViewById(R.id.level1);
+        level1.setOnClickListener(this);
 
-        hbg_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hbg_menu.setVisibility(View.INVISIBLE);
-                hbg_menu_info.setVisibility(View.VISIBLE);
-                hbg_menu_doc.setVisibility(View.VISIBLE);
-                hbg_menu_vol.setVisibility(View.VISIBLE);
-                hbg_menu_close.setVisibility(View.VISIBLE);
-            }
-        });
+        final Button level2 = findViewById(R.id.level2);
+        level2.setOnClickListener(this);
 
-        hbg_menu_close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hbg_menu.setVisibility(View.VISIBLE);
-                hbg_menu_info.setVisibility(View.INVISIBLE);
-                hbg_menu_doc.setVisibility(View.INVISIBLE);
-                hbg_menu_vol.setVisibility(View.INVISIBLE);
-                hbg_menu_close.setVisibility(View.INVISIBLE);
-            }
-        });
+        final Button level3 = findViewById(R.id.level3);
+        level3.setOnClickListener(this);
+
+        final Button level4 = findViewById(R.id.level4);
+        level4.setOnClickListener(this);
+
+        final Button level5 = findViewById(R.id.level5);
+        level5.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.level1:
+                level = 1;
+                break;
+            case R.id.level2:
+                level = 2;
+                break;
+            case R.id.level3:
+                level = 3;
+                break;
+            case R.id.level4:
+                level = 4;
+                break;
+            case R.id.level5:
+                level = 5;
+                break;
+        }
+
+        Intent intent = new Intent(CBT_Game.this, CBT_Sublevel.class);
+        startActivity(intent);
     }
 }

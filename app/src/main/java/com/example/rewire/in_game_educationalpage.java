@@ -2,6 +2,7 @@ package com.example.rewire;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -49,11 +50,13 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
                 break;
         }
 
+        if (page > 3) {
+            Intent intent = new Intent(in_game_educationalpage.this, cbt_qa.class);
+            startActivity(intent);
+        }
+
         if (page < 1) {
             page = 1;
-        }
-        else if (page > 3) {
-            page = 3;
         }
 
         switchPage();
