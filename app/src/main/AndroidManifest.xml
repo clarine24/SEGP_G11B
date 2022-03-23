@@ -10,15 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rewire">
         <activity
-            android:name=".CBT_Game"
-            android:exported="true"
-            android:launchMode="singleTask"/>
-        <activity
             android:name=".BT_prompt"
             android:exported="true"
             android:launchMode="singleTask" />
         <activity
             android:name=".BT_main"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".CBT_Game"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".CBT_Sublevel"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".in_game_educationalpage"
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
