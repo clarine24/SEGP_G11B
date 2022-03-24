@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         breathing_btn.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, BT_prompt.class);
+            Intent intent = new Intent(MainActivity.this, BT_start_prompt.class);
             startActivity(intent);
         });
     }

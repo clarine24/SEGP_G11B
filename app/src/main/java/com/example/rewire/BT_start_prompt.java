@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BT_prompt extends AppCompatActivity {
+public class BT_start_prompt extends AppCompatActivity {
 
     SeekBar bt_input_seekBar;
     TextView bt_numberOfRoundsInput;
@@ -16,7 +16,7 @@ public class BT_prompt extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_breathing_technique_prompt);
+        setContentView(R.layout.activity_breathing_technique_start_prompt);
 
         Header header = findViewById(R.id.header);
         header.initHeader();

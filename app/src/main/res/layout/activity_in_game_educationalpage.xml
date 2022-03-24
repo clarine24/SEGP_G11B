@@ -16,7 +16,7 @@
         android:layout_width="350dp"
         android:layout_height="500dp"
         android:background="@drawable/bt_box"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="@font/fredoka"
         android:text="Educational Information"
         android:textAlignment="center"
         android:textSize="45sp"

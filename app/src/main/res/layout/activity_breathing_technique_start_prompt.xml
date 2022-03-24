@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BT_prompt">
+    tools:context=".BT_start_prompt"
+    android:background="@color/light_pink">
 
     <com.example.rewire.Header
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="73dp" />
 
     <TextView
         android:id="@+id/bt_prompt_box"
@@ -28,6 +31,7 @@
         android:layout_marginBottom="150dp"
         android:gravity="center"
         android:text="Please insert the number of rounds"
+        android:fontFamily="@font/fredoka"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:text="OK"
+        android:fontFamily="@font/fredoka"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +74,7 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="5"
+        android:fontFamily="@font/fredoka"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
