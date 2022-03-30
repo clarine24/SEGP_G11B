@@ -59,7 +59,17 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
             page = 1;
         }
 
+        backButton();
         switchPage();
+    }
+
+    private void backButton() {
+        if (page == 1) {
+            back.setVisibility(View.INVISIBLE);
+        }
+        else {
+            back.setVisibility(View.VISIBLE);
+        }
     }
 
     private void switchPage() {
@@ -75,7 +85,7 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
             drawWhite(pageA);
             drawWhite(pageC);
         }
-        else {
+        else if (page == 3){
             drawBlack(pageC);
 
             drawWhite(pageA);
