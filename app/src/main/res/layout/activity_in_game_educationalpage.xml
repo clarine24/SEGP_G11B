@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".in_game_educationalpage"
-    android:background="@color/light_pink">
+    android:background="@color/light_pink"
+    tools:context=".in_game_educationalpage">
 
     <com.example.rewire.Header
         android:id="@+id/header"
@@ -13,8 +13,11 @@
         android:layout_height="match_parent" />
 
     <TextView
-        android:layout_width="350dp"
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
         android:layout_height="500dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/bt_box"
         android:fontFamily="@font/fredoka"
         android:text="Educational Information"
@@ -31,52 +34,53 @@
         android:id="@+id/edu_back"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="548dp"
-        android:layout_marginEnd="308dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="25dp"
         android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:srcCompat="@drawable/back_icon" />
 
     <ImageView
         android:id="@+id/edu_next"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="548dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
         android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:srcCompat="@drawable/next_icon" />
 
     <ImageView
         android:id="@+id/edu_pageA"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="228dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="12dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/edu_pageB"
         app:srcCompat="@drawable/bt_circle_black_fill" />
 
     <ImageView
         android:id="@+id/edu_pageB"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="12dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:srcCompat="@drawable/bt_circle_white_fill" />
 
     <ImageView
         android:id="@+id/edu_pageC"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="172dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="12dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/edu_pageB"
         app:srcCompat="@drawable/bt_circle_white_fill" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
