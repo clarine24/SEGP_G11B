@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/light_pink">
+    android:background="@color/light_pink"
+    android:id="@+id/activity_main">
 
     <com.example.rewire.Header
         android:id="@+id/header"

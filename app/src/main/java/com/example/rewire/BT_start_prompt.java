@@ -1,8 +1,12 @@
 package com.example.rewire;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -12,15 +16,20 @@ public class BT_start_prompt extends AppCompatActivity {
 
     SeekBar bt_input_seekBar;
     TextView bt_numberOfRoundsInput;
+    ImageView cancelButton;
+    Button exitButton;
+    Dialog mDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        mDialog = new Dialog(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_technique_start_prompt);
 
         Header header = findViewById(R.id.header);
         header.initHeader();
-        header.home_btn.setOnClickListener(v -> startActivity(header.toHomeMenu()));
 
         final Button bt_ok_btn = findViewById(R.id.bt_ok_button);
 
@@ -48,5 +57,23 @@ public class BT_start_prompt extends AppCompatActivity {
 
             }
         });
+
+        header.home_btn.setOnClickListener(view -> {
+
+            mDialog.setContentView(R.layout.tohomemenu_exit);
+            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton = mDialog.findViewById(R.id.exitbutton);
+            exitButton = mDialog.findViewById(R.id.exitohomemenu);
+
+            cancelButton.setOnClickListener(v1 -> mDialog.dismiss());
+            exitButton.setOnClickListener(v1 -> {
+                mDialog.dismiss();
+                startActivity(header.toHomeMenu());
+            });
+
+            mDialog.show();
+
+        });
     }
+
 }
