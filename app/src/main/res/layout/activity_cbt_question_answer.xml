@@ -25,6 +25,20 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/optionC_ans"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="240dp"
+        android:src="@drawable/incorrect_icon"
+        android:elevation="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/optionC"
+        app:layout_constraintEnd_toEndOf="@+id/optionC"
+        app:layout_constraintStart_toStartOf="@+id/optionC"
+        app:layout_constraintTop_toTopOf="@+id/optionC"
+        />
+
     <Button
         android:id="@+id/optionB"
         android:layout_width="336dp"
@@ -37,6 +51,21 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/optionA" />
+
+    <ImageView
+        android:id="@+id/optionB_ans"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="240dp"
+        android:src="@drawable/incorrect_icon"
+        android:elevation="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/optionB"
+        app:layout_constraintEnd_toEndOf="@+id/optionB"
+        app:layout_constraintStart_toStartOf="@+id/optionB"
+        app:layout_constraintTop_toTopOf="@+id/optionB"
+        />
+
     <Button
         android:id="@+id/optionA"
         android:layout_width="336dp"
@@ -45,10 +74,25 @@
         android:text="Option A"
         android:textSize="34sp"
         android:fontFamily="@font/fredoka"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question" />
+
+    <ImageView
+        android:id="@+id/optionA_ans"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="240dp"
+        android:src="@drawable/correct_icon"
+        android:elevation="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/optionA"
+        app:layout_constraintEnd_toEndOf="@+id/optionA"
+        app:layout_constraintStart_toStartOf="@+id/optionA"
+        app:layout_constraintTop_toTopOf="@+id/optionA"
+        />
 
     <TextView
         android:id="@+id/question"
