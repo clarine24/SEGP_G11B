@@ -26,9 +26,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/optionC_ans"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/optionC_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginRight="240dp"
         android:src="@drawable/incorrect_icon"
         android:elevation="5dp"
@@ -53,9 +53,9 @@
         app:layout_constraintTop_toBottomOf="@+id/optionA" />
 
     <ImageView
-        android:id="@+id/optionB_ans"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/optionB_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginRight="240dp"
         android:src="@drawable/incorrect_icon"
         android:elevation="5dp"
@@ -81,9 +81,9 @@
         app:layout_constraintTop_toBottomOf="@+id/question" />
 
     <ImageView
-        android:id="@+id/optionA_ans"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/optionA_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginRight="240dp"
         android:src="@drawable/correct_icon"
         android:elevation="5dp"
