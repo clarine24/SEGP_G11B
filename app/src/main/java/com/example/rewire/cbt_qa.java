@@ -1,7 +1,6 @@
 package com.example.rewire;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -12,14 +11,12 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class cbt_qa extends AppCompatActivity {
-
-    ImageView cancelButton;
+    Button cancelButton;
     Button exitButton;
     Dialog mDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         mDialog = new Dialog(this);
 
         super.onCreate(savedInstanceState);
@@ -29,10 +26,10 @@ public class cbt_qa extends AppCompatActivity {
         header.initHeader();
         header.home_btn.setOnClickListener(view -> {
 
-            mDialog.setContentView(R.layout.tohomemenu_exit);
+            mDialog.setContentView(R.layout.exit_to_home_popup);
             mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            cancelButton = mDialog.findViewById(R.id.exitbutton);
-            exitButton = mDialog.findViewById(R.id.exitohomemenu);
+            cancelButton = mDialog.findViewById(R.id.homeButton);
+            exitButton = mDialog.findViewById(R.id.exitToHomeButton);
 
             cancelButton.setOnClickListener(v1 -> mDialog.dismiss());
             exitButton.setOnClickListener(v1 -> {
@@ -54,45 +51,39 @@ public class cbt_qa extends AppCompatActivity {
         //assume OPTION A is the correct answer
         char correct = 'A';
 
-        optionA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                optionA_ans.setVisibility(View.VISIBLE);
+        optionA.setOnClickListener(v -> {
+            optionA_ans.setVisibility(View.VISIBLE);
 
-                if (correct == 'A')
-                    optionA.setBackgroundColor(getResources().getColor(R.color.dark_green));
-                else
-                    optionA.setBackgroundColor(getResources().getColor(R.color.dark_red));
-            }
-
+            if (correct == 'A')
+                correctAns(optionA);
+            else
+                wrongAns(optionA);
         });
 
-        optionB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                optionB_ans.setVisibility(View.VISIBLE);
+        optionB.setOnClickListener(v -> {
+            optionB_ans.setVisibility(View.VISIBLE);
 
-                if (correct == 'B')
-                    optionB.setBackgroundColor(getResources().getColor(R.color.dark_green));
-                else
-                    optionB.setBackgroundColor(getResources().getColor(R.color.dark_red));
-            }
+            if (correct == 'B')
+                correctAns(optionB);
+            else
+                wrongAns(optionB);
         });
 
-        optionC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                optionC_ans.setVisibility(View.VISIBLE);
+        optionC.setOnClickListener(v -> {
+            optionC_ans.setVisibility(View.VISIBLE);
 
-                if (correct == 'C')
-                    optionC.setBackgroundColor(getResources().getColor(R.color.dark_green));
-                else
-                    optionC.setBackgroundColor(getResources().getColor(R.color.dark_red));
-            }
+            if (correct == 'C')
+                correctAns(optionC);
+            else
+                wrongAns(optionC);
         });
-
     }
 
+    private void correctAns(Button option) {
+        option.setBackgroundColor(getResources().getColor(R.color.dark_green));
+    }
 
-
+    private void wrongAns(Button option) {
+        option.setBackgroundColor(getResources().getColor(R.color.dark_red));
+    }
 }

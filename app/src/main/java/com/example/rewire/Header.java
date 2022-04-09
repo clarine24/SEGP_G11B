@@ -16,9 +16,6 @@ public class Header extends ConstraintLayout {
     public ImageView hbg_menu_close;
     public ImageView home_btn;
 
-
-
-
     public Header(Context context) {
         super(context);
     }
@@ -46,7 +43,6 @@ public class Header extends ConstraintLayout {
         hbg_menu_close = findViewById(R.id.hbg_menu_close);
         home_btn = findViewById(R.id.bt_home_icon);
 
-
         hbg_menu.setOnClickListener(view -> {
             hbg_menu.setVisibility(INVISIBLE);
             hbg_menu_info.setVisibility(VISIBLE);
@@ -62,10 +58,6 @@ public class Header extends ConstraintLayout {
             hbg_menu_close.setVisibility(INVISIBLE);
             hbg_menu.setVisibility(VISIBLE);
         });
-
-
-
-
     }
 
     protected Intent toHomeMenu() {

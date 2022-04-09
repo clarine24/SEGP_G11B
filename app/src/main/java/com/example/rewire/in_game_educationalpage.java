@@ -1,7 +1,6 @@
 package com.example.rewire;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,12 +16,12 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
 
     ImageView back;
     ImageView next;
-
     ImageView pageA;
     ImageView pageB;
     ImageView pageC;
     Drawable draw;
-    ImageView cancelButton;
+
+    Button cancelButton;
     Button exitButton;
     Dialog mDialog;
 
@@ -35,12 +34,12 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
 
         Header header = findViewById(R.id.header);
         header.initHeader();
-        header.home_btn.setOnClickListener(view -> {
 
-            mDialog.setContentView(R.layout.tohomemenu_exit);
+        header.home_btn.setOnClickListener(view -> {
+            mDialog.setContentView(R.layout.exit_to_home_popup);
             mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            cancelButton = mDialog.findViewById(R.id.exitbutton);
-            exitButton = mDialog.findViewById(R.id.exitohomemenu);
+            cancelButton = mDialog.findViewById(R.id.homeButton);
+            exitButton = mDialog.findViewById(R.id.exitToHomeButton);
 
             cancelButton.setOnClickListener(v1 -> mDialog.dismiss());
             exitButton.setOnClickListener(v1 -> {
@@ -49,7 +48,6 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
             });
 
             mDialog.show();
-
         });
 
         back = findViewById(R.id.edu_back);

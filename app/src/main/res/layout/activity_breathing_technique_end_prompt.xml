@@ -7,12 +7,8 @@
     tools:context=".BT_end_prompt"
     android:background="@color/light_pink">
 
-    <com.example.rewire.Header
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <TextView
+        android:id="@+id/popup_border"
         android:layout_width="378dp"
         android:layout_height="267dp"
         android:background="@drawable/bt_box"
@@ -22,126 +18,43 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--
-    <ImageView
-        android:id="@+id/hbg_menu"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:clickable="true"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hbg_menu_icon" />
-
-    <ImageView
-        android:id="@+id/hbg_menu_close"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/close_icon" />
-
-    <ImageView
-        android:id="@+id/hbg_menu_info"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="75dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/info_icon" />
-
-    <ImageView
-        android:id="@+id/hbg_menu_doc"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="140dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/doc_icon" />
-
-    <ImageView
-        android:id="@+id/hbg_menu_vol"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="205dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vol_icon" />
-
-    <ImageView
-        android:id="@+id/home_icon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="344dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
-        -->
-
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="290dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="282dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="349dp"
-        android:text="Exercise Completed!"
+        android:id="@+id/display_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:fontFamily="@font/fredoka"
+        android:text="Exercise Completed!"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="@+id/popup_border"
+        app:layout_constraintStart_toStartOf="@+id/popup_border"
+        app:layout_constraintTop_toTopOf="@+id/popup_border" />
 
     <Button
-        android:id="@+id/go_main_menu"
+        android:id="@+id/exit_to_home_btn"
         android:layout_width="142dp"
         android:layout_height="78dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="45dp"
+        android:fontFamily="@font/fredoka"
         android:text="Main Menu"
-        android:fontFamily="@font/fredoka"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintBottom_toBottomOf="@+id/popup_border"
+        app:layout_constraintEnd_toEndOf="@+id/popup_border" />
 
     <Button
-        android:id="@+id/stay_in_breathing_page"
+        android:id="@+id/restart_btn"
         android:layout_width="142dp"
         android:layout_height="78dp"
-        android:text="Restart"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="45dp"
         android:fontFamily="@font/fredoka"
-        android:textStyle="bold"
+        android:text="Restart"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/popup_border"
+        app:layout_constraintStart_toStartOf="@+id/popup_border" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

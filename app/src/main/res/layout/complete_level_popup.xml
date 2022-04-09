@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/congrats"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bt_box_white_fill"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/congrats_text"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/fredoka"
+        android:gravity="center|center_vertical"
+        android:text="Congratulations! You've completed the level!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/congrats"
+        app:layout_constraintStart_toStartOf="@+id/congrats"
+        app:layout_constraintTop_toTopOf="@+id/congrats" />
+
+    <Button
+        android:id="@+id/selectlevel_Btn"
+        android:layout_width="200dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:fontFamily="@font/fredoka"
+        android:text="Select Level"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/homeButton"
+        app:layout_constraintEnd_toEndOf="@+id/congrats"
+        app:layout_constraintStart_toStartOf="@+id/congrats" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="200dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="40dp"
+        android:clickable="true"
+        android:fontFamily="@font/fredoka"
+        android:text="Go to Home"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/congrats"
+        app:layout_constraintEnd_toEndOf="@+id/congrats"
+        app:layout_constraintStart_toStartOf="@+id/congrats" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

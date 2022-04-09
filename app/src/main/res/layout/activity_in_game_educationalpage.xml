@@ -13,7 +13,7 @@
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/display_text"
         android:layout_width="0dp"
         android:layout_height="500dp"
         android:layout_marginLeft="20dp"
@@ -38,8 +38,8 @@
         android:layout_marginBottom="25dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/display_text"
+        app:layout_constraintStart_toStartOf="@+id/display_text"
         app:srcCompat="@drawable/back_icon" />
 
     <ImageView
@@ -49,8 +49,8 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/display_text"
+        app:layout_constraintEnd_toEndOf="@+id/display_text"
         app:srcCompat="@drawable/next_icon" />
 
     <ImageView
@@ -59,7 +59,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/display_text"
         app:layout_constraintEnd_toStartOf="@+id/edu_pageB"
         app:srcCompat="@drawable/bt_circle_black_fill" />
 
@@ -68,9 +68,9 @@
         android:layout_width="12dp"
         android:layout_height="48dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/display_text"
+        app:layout_constraintEnd_toEndOf="@+id/display_text"
+        app:layout_constraintStart_toStartOf="@+id/display_text"
         app:srcCompat="@drawable/bt_circle_white_fill" />
 
     <ImageView
@@ -79,7 +79,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/display_text"
         app:layout_constraintStart_toEndOf="@+id/edu_pageB"
         app:srcCompat="@drawable/bt_circle_white_fill" />
 
