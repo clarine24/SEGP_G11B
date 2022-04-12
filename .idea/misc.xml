@@ -28,13 +28,14 @@
         <entry key="app/src/main/res/layout/activity_cbt_game.xml" value="0.28888888888888886" />
         <entry key="app/src/main/res/layout/activity_cbt_question_answer.xml" value="0.28888888888888886" />
         <entry key="app/src/main/res/layout/activity_cbt_sublevel.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_in_game_educationalpage.xml" value="0.37493286132812514" />
+        <entry key="app/src/main/res/layout/activity_in_game_educationalpage.xml" value="0.32098765432098764" />
         <entry key="app/src/main/res/layout/activity_in_game_educationalpage2.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_in_game_educationalpage3.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28888888888888886" />
+        <entry key="app/src/main/res/layout/complete_level_popup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/congratslevel.xml" value="0.335" />
         <entry key="app/src/main/res/layout/exitToHome_popup.xml" value="0.28229166666666666" />
-        <entry key="app/src/main/res/layout/exit_to_home_popup.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/exit_to_home_popup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/header.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/tohomemenu_exit.xml" value="0.335" />
       </map>
@@ -49,7 +50,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.335" />
+        <option name="scale" value="0.37493286132812514" />
       </ProjectState>
     </option>
   </component>

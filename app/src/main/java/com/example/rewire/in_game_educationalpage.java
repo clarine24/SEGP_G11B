@@ -10,6 +10,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class in_game_educationalpage extends AppCompatActivity implements View.OnClickListener {
     int page = 1;
@@ -24,6 +30,11 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
     Button cancelButton;
     Button exitButton;
     Dialog mDialog;
+
+    InputStream inputStream;
+    BufferedReader bufferedReader;
+    StringBuffer stringBuffer;
+    TextView eduTitle, eduInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +60,10 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
 
             mDialog.show();
         });
+
+        eduTitle = findViewById(R.id.edu_title);
+        eduInfo = findViewById(R.id.edu_info);
+        //displayText();
 
         back = findViewById(R.id.edu_back);
         next = findViewById(R.id.edu_next);
@@ -129,5 +144,25 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
         draw = getResources().getDrawable(whiteImage);
 
         page.setImageDrawable(draw);
+    }
+
+    private void displayText() {
+        /*inputStream = this.getResources().openRawResource(R.raw.testing);
+        bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        stringBuffer = new StringBuffer();
+
+        String text = "";
+
+        if (inputStream != null) {
+            try {
+                while ((text = bufferedReader.readLine()) != null) {
+                    stringBuffer.append(text + "\n");
+                }
+
+                eduInfo.setText(stringBuffer);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }*/
     }
 }

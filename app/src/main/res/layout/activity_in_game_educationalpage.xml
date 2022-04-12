@@ -12,23 +12,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/display_text"
+    <ImageView
+        android:id="@+id/edu_border"
         android:layout_width="0dp"
         android:layout_height="500dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/bt_box"
-        android:fontFamily="@font/fredoka"
-        android:text="Educational Information"
-        android:textAlignment="center"
-        android:textSize="45sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/bt_box"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintTop_toTopOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/edu_title"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/fredoka"
+        android:text="Negative\nFiltering"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edu_border"
+        app:layout_constraintStart_toStartOf="@+id/edu_border"
+        app:layout_constraintTop_toTopOf="@+id/edu_border" />
+
+    <TextView
+        android:id="@+id/edu_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/fredoka"
+        android:text="Negative Filtering is a common cognitive distortion, and most of us do it from time to time. Simply, it is filtering out all of the positive information about a specific situation, and only allowing in the negative information. In other words, negative filtering is focusing on negative things and discounting positive things."
+        android:textAlignment="viewStart"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/edu_pageB"
+        app:layout_constraintEnd_toEndOf="@+id/edu_border"
+        app:layout_constraintStart_toStartOf="@+id/edu_border"
+        app:layout_constraintTop_toBottomOf="@+id/edu_title" />
 
     <ImageView
         android:id="@+id/edu_back"
@@ -38,8 +61,8 @@
         android:layout_marginBottom="25dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/display_text"
-        app:layout_constraintStart_toStartOf="@+id/display_text"
+        app:layout_constraintBottom_toBottomOf="@+id/edu_border"
+        app:layout_constraintStart_toStartOf="@+id/edu_border"
         app:srcCompat="@drawable/back_icon" />
 
     <ImageView
@@ -49,8 +72,8 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/display_text"
-        app:layout_constraintEnd_toEndOf="@+id/display_text"
+        app:layout_constraintBottom_toBottomOf="@+id/edu_border"
+        app:layout_constraintEnd_toEndOf="@+id/edu_border"
         app:srcCompat="@drawable/next_icon" />
 
     <ImageView
@@ -59,7 +82,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/display_text"
+        app:layout_constraintBottom_toBottomOf="@+id/edu_border"
         app:layout_constraintEnd_toStartOf="@+id/edu_pageB"
         app:srcCompat="@drawable/bt_circle_black_fill" />
 
@@ -68,9 +91,9 @@
         android:layout_width="12dp"
         android:layout_height="48dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/display_text"
-        app:layout_constraintEnd_toEndOf="@+id/display_text"
-        app:layout_constraintStart_toStartOf="@+id/display_text"
+        app:layout_constraintBottom_toBottomOf="@+id/edu_border"
+        app:layout_constraintEnd_toEndOf="@+id/edu_border"
+        app:layout_constraintStart_toStartOf="@+id/edu_border"
         app:srcCompat="@drawable/bt_circle_white_fill" />
 
     <ImageView
@@ -79,7 +102,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/display_text"
+        app:layout_constraintBottom_toBottomOf="@+id/edu_border"
         app:layout_constraintStart_toEndOf="@+id/edu_pageB"
         app:srcCompat="@drawable/bt_circle_white_fill" />
 
