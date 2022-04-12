@@ -13,11 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class cbt_qa extends AppCompatActivity {
     Button cancelButton;
     Button exitButton;
-    Dialog mDialog;
+    Dialog exitToHomeDialog, infoDialog;
+    ImageView cancelButton1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mDialog = new Dialog(this);
+        exitToHomeDialog = new Dialog(this);
+        infoDialog = new Dialog(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cbt_question_answer);
@@ -26,19 +28,29 @@ public class cbt_qa extends AppCompatActivity {
         header.initHeader();
         header.home_btn.setOnClickListener(view -> {
 
-            mDialog.setContentView(R.layout.exit_to_home_popup);
-            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            cancelButton = mDialog.findViewById(R.id.homeButton);
-            exitButton = mDialog.findViewById(R.id.exitToHomeButton);
+            exitToHomeDialog.setContentView(R.layout.exit_to_home_popup);
+            exitToHomeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton = exitToHomeDialog.findViewById(R.id.homeButton);
+            exitButton = exitToHomeDialog.findViewById(R.id.exitToHomeButton);
 
-            cancelButton.setOnClickListener(v1 -> mDialog.dismiss());
+            cancelButton.setOnClickListener(v1 -> exitToHomeDialog.dismiss());
             exitButton.setOnClickListener(v1 -> {
-                mDialog.dismiss();
+                exitToHomeDialog.dismiss();
                 startActivity(header.toHomeMenu());
             });
 
-            mDialog.show();
+            exitToHomeDialog.show();
 
+        });
+
+        header.hbg_menu_info.setOnClickListener(view -> {
+            infoDialog.setContentView(R.layout.about_pop_up);
+            infoDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            cancelButton1 = infoDialog.findViewById(R.id.exitbuttoninfo);
+            cancelButton1.setOnClickListener(v -> infoDialog.dismiss());
+
+            infoDialog.show();
         });
 
         final Button optionA = findViewById(R.id.optionA);
