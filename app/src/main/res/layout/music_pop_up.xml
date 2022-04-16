@@ -81,7 +81,7 @@
         android:text="Unmute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/music_popUp"
-        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="@id/music_popUp"
         app:layout_constraintTop_toBottomOf="@id/Music"
         app:layout_constraintVertical_bias="0.0" />

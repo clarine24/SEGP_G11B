@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     ImageView cancelButton;
     Dialog infoDialog;
+    Dialog musicDialog;
+    MediaPlayer lofiMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         infoDialog = new Dialog(this);
+        musicDialog = new Dialog(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -48,5 +52,21 @@ public class MainActivity extends AppCompatActivity {
 
             infoDialog.show();
         });
+
+        header.hbg_menu_vol.setOnClickListener(view -> {
+            musicDialog.setContentView(R.layout.music_pop_up);
+            musicDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            cancelButton = musicDialog.findViewById(R.id.exitbuttonmusic);
+            cancelButton.setOnClickListener(v -> musicDialog.dismiss());
+
+            musicDialog.show();
+        });
+
+        lofiMusic = MediaPlayer.create(this, R.raw.onion);
+        lofiMusic.setLooping(true);
+        lofiMusic.setVolume(70, 70);
+
+        lofiMusic.start();
     }
 }
