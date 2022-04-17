@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             musicDialog.show();
         });
 
-        musicPlayer = MediaPlayer.create(this, R.raw.onion);
+        musicPlayer = MediaPlayer.create(this, R.raw.lofi);
 
         musicPlayer.setLooping(true);
         musicPlayer.setVolume(70, 70);
