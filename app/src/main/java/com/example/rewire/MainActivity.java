@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView cancelButton;
     Dialog infoDialog;
     Dialog musicDialog;
-    MediaPlayer lofiMusic;
+    MediaPlayer musicPlayer;
+    Music musicObject = new Music();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +64,18 @@ public class MainActivity extends AppCompatActivity {
             musicDialog.show();
         });
 
-        lofiMusic = MediaPlayer.create(this, R.raw.onion);
-        lofiMusic.setLooping(true);
-        lofiMusic.setVolume(70, 70);
+        musicPlayer = MediaPlayer.create(this, R.raw.onion);
 
-        lofiMusic.start();
+        musicPlayer.setLooping(true);
+        musicPlayer.setVolume(70, 70);
+
+        musicPlayer.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicPlayer.stop();
+        musicPlayer.release();
     }
 }
