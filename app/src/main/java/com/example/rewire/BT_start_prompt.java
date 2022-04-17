@@ -17,13 +17,15 @@ public class BT_start_prompt extends AppCompatActivity {
     TextView bt_numberOfRoundsInput;
     Button cancelButton;
     Button exitButton;
-    Dialog exitToHomeDialog, infoDialog;
+    Dialog exitToHomeDialog, infoDialog, docDialog;
     ImageView cancelButton1;
+    ImageView cancelButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         exitToHomeDialog = new Dialog(this);
         infoDialog = new Dialog(this);
+        docDialog = new Dialog( this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_technique_start_prompt);
@@ -81,6 +83,17 @@ public class BT_start_prompt extends AppCompatActivity {
             cancelButton1.setOnClickListener(v -> infoDialog.dismiss());
 
             infoDialog.show();
+        });
+        header.hbg_menu_doc.setOnClickListener(view -> {
+
+            docDialog.setContentView(R.layout.documentation_pop_up);
+            docDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton2 = docDialog.findViewById(R.id.exitbuttondoc);
+
+            cancelButton2.setOnClickListener(v -> docDialog.dismiss());
+
+            docDialog.show();
+
         });
     }
 

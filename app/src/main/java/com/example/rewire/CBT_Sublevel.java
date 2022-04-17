@@ -16,10 +16,13 @@ public class CBT_Sublevel extends AppCompatActivity implements View.OnClickListe
 
     Dialog infoDialog;
     ImageView cancelButton;
+    Dialog docDialog;
+    ImageView cancelButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         infoDialog = new Dialog(this);
+        docDialog = new Dialog( this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cbt_sublevel);
@@ -36,6 +39,17 @@ public class CBT_Sublevel extends AppCompatActivity implements View.OnClickListe
             cancelButton.setOnClickListener(v -> infoDialog.dismiss());
 
             infoDialog.show();
+        });
+        header.hbg_menu_doc.setOnClickListener(view -> {
+
+            docDialog.setContentView(R.layout.documentation_pop_up);
+            docDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton2 = docDialog.findViewById(R.id.exitbuttondoc);
+
+            cancelButton2.setOnClickListener(v -> docDialog.dismiss());
+
+            docDialog.show();
+
         });
 
         TextView title = findViewById(R.id.title);
