@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
         musicPlayer.setVolume(70, 70);
 
         musicPlayer.start();
-    }
 
 
         header.hbg_menu_doc.setOnClickListener(view -> {
