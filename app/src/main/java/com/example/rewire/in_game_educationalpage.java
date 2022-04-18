@@ -31,6 +31,8 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
     Button exitButton;
     Dialog exitToHomeDialog, infoDialog;
     ImageView cancelButton1;
+    Dialog docDialog;
+    ImageView cancelButton2;
 
     InputStream inputStream;
     BufferedReader bufferedReader;
@@ -41,6 +43,7 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         exitToHomeDialog = new Dialog(this);
         infoDialog = new Dialog(this);
+        docDialog = new Dialog( this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_game_educationalpage);
@@ -71,6 +74,17 @@ public class in_game_educationalpage extends AppCompatActivity implements View.O
             cancelButton1.setOnClickListener(v -> infoDialog.dismiss());
 
             infoDialog.show();
+        });
+        header.hbg_menu_doc.setOnClickListener(view -> {
+
+            docDialog.setContentView(R.layout.documentation_pop_up);
+            docDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton2 = docDialog.findViewById(R.id.exitbuttondoc);
+
+            cancelButton2.setOnClickListener(v -> docDialog.dismiss());
+
+            docDialog.show();
+
         });
 
         eduTitle = findViewById(R.id.edu_title);

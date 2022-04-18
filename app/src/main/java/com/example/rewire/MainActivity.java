@@ -15,14 +15,21 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     ImageView cancelButton;
     Dialog infoDialog;
+
     Dialog musicDialog;
     MediaPlayer musicPlayer;
     Music musicObject = new Music();
+
+    Dialog docDialog;
+    ImageView cancelButton2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         infoDialog = new Dialog(this);
         musicDialog = new Dialog(this);
+        docDialog = new Dialog( this);
+      
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -72,7 +79,21 @@ public class MainActivity extends AppCompatActivity {
         musicPlayer.start();
     }
 
-    @Override
+
+        header.hbg_menu_doc.setOnClickListener(view -> {
+
+            docDialog.setContentView(R.layout.documentation_pop_up);
+            docDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton2 = docDialog.findViewById(R.id.exitbuttondoc);
+
+            cancelButton2.setOnClickListener(v -> docDialog.dismiss());
+
+            docDialog.show();
+
+        });
+    }
+  
+  @Override
     protected void onDestroy() {
         super.onDestroy();
         musicPlayer.stop();

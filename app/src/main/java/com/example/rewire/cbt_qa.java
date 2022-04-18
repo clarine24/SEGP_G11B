@@ -15,11 +15,14 @@ public class cbt_qa extends AppCompatActivity {
     Button exitButton;
     Dialog exitToHomeDialog, infoDialog;
     ImageView cancelButton1;
+    Dialog docDialog;
+    ImageView cancelButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         exitToHomeDialog = new Dialog(this);
         infoDialog = new Dialog(this);
+        docDialog = new Dialog( this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cbt_question_answer);
@@ -51,6 +54,17 @@ public class cbt_qa extends AppCompatActivity {
             cancelButton1.setOnClickListener(v -> infoDialog.dismiss());
 
             infoDialog.show();
+        });
+        header.hbg_menu_doc.setOnClickListener(view -> {
+
+            docDialog.setContentView(R.layout.documentation_pop_up);
+            docDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            cancelButton2 = docDialog.findViewById(R.id.exitbuttondoc);
+
+            cancelButton2.setOnClickListener(v -> docDialog.dismiss());
+
+            docDialog.show();
+
         });
 
         final Button optionA = findViewById(R.id.optionA);
