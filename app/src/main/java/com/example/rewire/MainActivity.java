@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,13 +15,21 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     ImageView cancelButton;
     Dialog infoDialog;
+
+    Dialog musicDialog;
+    MediaPlayer musicPlayer;
+    Music musicObject = new Music();
+
     Dialog docDialog;
     ImageView cancelButton2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         infoDialog = new Dialog(this);
+        musicDialog = new Dialog(this);
         docDialog = new Dialog( this);
+      
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -51,6 +60,26 @@ public class MainActivity extends AppCompatActivity {
 
             infoDialog.show();
         });
+
+        header.hbg_menu_vol.setOnClickListener(view -> {
+            musicDialog.setContentView(R.layout.music_pop_up);
+            musicDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            cancelButton = musicDialog.findViewById(R.id.exitbuttonmusic);
+            cancelButton.setOnClickListener(v -> musicDialog.dismiss());
+
+            musicDialog.show();
+        });
+
+        musicPlayer = MediaPlayer.create(this, R.raw.lofi);
+
+        musicPlayer.setLooping(true);
+        musicPlayer.setVolume(70, 70);
+
+        musicPlayer.start();
+    }
+
+
         header.hbg_menu_doc.setOnClickListener(view -> {
 
             docDialog.setContentView(R.layout.documentation_pop_up);
@@ -62,5 +91,12 @@ public class MainActivity extends AppCompatActivity {
             docDialog.show();
 
         });
+    }
+  
+  @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicPlayer.stop();
+        musicPlayer.release();
     }
 }
