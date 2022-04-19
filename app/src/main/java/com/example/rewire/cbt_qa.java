@@ -1,71 +1,17 @@
 package com.example.rewire;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class cbt_qa extends AppCompatActivity {
-    Button cancelButton;
-    Button exitButton;
-    Dialog exitToHomeDialog, infoDialog;
-    ImageView cancelButton1;
-    Dialog docDialog;
-    ImageView cancelButton2;
-
+public class cbt_qa extends AppRunning {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        exitToHomeDialog = new Dialog(this);
-        infoDialog = new Dialog(this);
-        docDialog = new Dialog( this);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cbt_question_answer);
 
-        Header header = findViewById(R.id.header);
-        header.initHeader();
-        header.home_btn.setOnClickListener(view -> {
-
-            exitToHomeDialog.setContentView(R.layout.exit_to_home_popup);
-            exitToHomeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            cancelButton = exitToHomeDialog.findViewById(R.id.homeButton);
-            exitButton = exitToHomeDialog.findViewById(R.id.exitToHomeButton);
-
-            cancelButton.setOnClickListener(v1 -> exitToHomeDialog.dismiss());
-            exitButton.setOnClickListener(v1 -> {
-                exitToHomeDialog.dismiss();
-                startActivity(header.toHomeMenu());
-            });
-
-            exitToHomeDialog.show();
-
-        });
-
-        header.hbg_menu_info.setOnClickListener(view -> {
-            infoDialog.setContentView(R.layout.about_pop_up);
-            infoDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-            cancelButton1 = infoDialog.findViewById(R.id.exitbuttoninfo);
-            cancelButton1.setOnClickListener(v -> infoDialog.dismiss());
-
-            infoDialog.show();
-        });
-        header.hbg_menu_doc.setOnClickListener(view -> {
-
-            docDialog.setContentView(R.layout.documentation_pop_up);
-            docDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            cancelButton2 = docDialog.findViewById(R.id.exitbuttondoc);
-
-            cancelButton2.setOnClickListener(v -> docDialog.dismiss());
-
-            docDialog.show();
-
-        });
+        setHeader();
 
         final Button optionA = findViewById(R.id.optionA);
         final Button optionB = findViewById(R.id.optionB);

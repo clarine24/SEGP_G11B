@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".About_PopUp">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/info_popUp"
@@ -14,17 +13,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444"
         tools:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <ImageView
         android:id="@+id/exitbuttoninfo"
         android:layout_width="25dp"
         android:layout_height="41dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:clickable="true"
         android:focusable="auto"
         android:src="@drawable/close_icon"
@@ -37,22 +34,16 @@
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/Information"
-        android:layout_width="240dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="518dp"
+        android:id="@+id/About"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/fredoka"
-        android:text="Information"
+        android:text="About App"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@id/info_popUp"
-        app:layout_constraintEnd_toEndOf="@id/info_popUp"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@id/info_popUp"
-        app:layout_constraintTop_toTopOf="@id/info_popUp"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintEnd_toEndOf="@+id/info_popUp"
+        app:layout_constraintStart_toStartOf="@+id/info_popUp"
+        app:layout_constraintTop_toTopOf="@id/info_popUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

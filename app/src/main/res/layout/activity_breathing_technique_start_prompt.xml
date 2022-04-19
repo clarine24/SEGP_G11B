@@ -3,26 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BT_start_prompt"
-    android:background="@color/light_pink">
-
-    <com.example.rewire.Header
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="73dp" />
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/bt_prompt_box"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/bt_box"
+        android:background="@drawable/bt_box_white_fill"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <TextView
         android:id="@+id/bt_input_message"
@@ -39,30 +32,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bt_ok_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="OK"
+        android:id="@+id/okButton"
+        android:layout_width="142dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
         android:fontFamily="@font/fredoka"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="OK"
+        android:backgroundTint="@color/dark_pink"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_prompt_box"
+        app:layout_constraintEnd_toEndOf="@+id/bt_prompt_box"
+        app:layout_constraintStart_toStartOf="@+id/bt_prompt_box" />
 
     <SeekBar
         android:id="@+id/bt_input_seekBar"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginTop="80dp"
+        android:indeterminate="false"
+        android:max="10"
+        android:min="1"
+        android:progress="5"
         android:scaleX="2"
         android:scaleY="2"
-        android:progress="5"
-        android:min="0"
-        android:max="100"
-        android:indeterminate="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

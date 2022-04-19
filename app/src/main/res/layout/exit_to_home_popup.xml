@@ -7,12 +7,8 @@
 
     <TextView
         android:id="@+id/tohomeexit"
-        android:layout_width="378dp"
+        android:layout_width="350dp"
         android:layout_height="250dp"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="356dp"
         android:background="@drawable/bt_box_white_fill"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,10 +30,10 @@
         app:layout_constraintTop_toTopOf="@+id/tohomeexit" />
 
     <Button
-        android:id="@+id/exitToHomeButton"
+        android:id="@+id/exitButton"
         android:layout_width="142dp"
         android:layout_height="78dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="25dp"
         android:layout_marginBottom="45dp"
         android:clickable="true"
         android:fontFamily="@font/fredoka"
@@ -48,10 +44,10 @@
         app:layout_constraintStart_toStartOf="@+id/tohomeexit" />
 
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/closeButton"
         android:layout_width="142dp"
         android:layout_height="78dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginBottom="45dp"
         android:clickable="true"
         android:fontFamily="@font/fredoka"

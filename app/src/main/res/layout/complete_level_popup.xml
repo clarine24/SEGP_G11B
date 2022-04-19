@@ -41,12 +41,12 @@
         android:text="Select Level"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/homeButton"
+        app:layout_constraintBottom_toTopOf="@+id/closeButton"
         app:layout_constraintEnd_toEndOf="@+id/congrats"
         app:layout_constraintStart_toStartOf="@+id/congrats" />
 
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/closeButton"
         android:layout_width="200dp"
         android:layout_height="78dp"
         android:layout_marginBottom="40dp"

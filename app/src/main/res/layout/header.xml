@@ -51,7 +51,7 @@
         app:srcCompat="@drawable/doc_icon" />
 
     <ImageView
-        android:id="@+id/hbg_menu_vol"
+        android:id="@+id/music"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginTop="10dp"

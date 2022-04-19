@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rewire">
         <activity
-            android:name=".BT_start_prompt"
-            android:exported="true"
-            android:launchMode="singleTask" />
-        <activity
             android:name=".BT_main"
             android:exported="true"
             android:launchMode="singleTask"/>
@@ -31,10 +27,6 @@
             android:launchMode="singleTask"/>
         <activity
             android:name=".cbt_qa"
-            android:exported="true"
-            android:launchMode="singleTask"/>
-        <activity
-            android:name=".BT_end_prompt"
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
