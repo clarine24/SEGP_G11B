@@ -1,8 +1,6 @@
 package com.example.rewire;
 
 import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.widget.Button;
 
 public class AppRunning extends App {
