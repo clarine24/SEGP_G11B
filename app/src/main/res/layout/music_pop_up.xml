@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/music_popUp"
-        android:layout_width="350dp"
-        android:layout_height="450dp"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
         android:background="@drawable/bt_box_white_fill"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,6 +27,7 @@
         android:clickable="true"
         android:focusable="auto"
         android:src="@drawable/close_icon"
+        android:layout_marginTop="7dp"
         app:layout_constraintBottom_toBottomOf="@id/music_popUp"
         app:layout_constraintEnd_toEndOf="@id/music_popUp"
         app:layout_constraintHorizontal_bias="0.92"
@@ -35,49 +36,58 @@
         app:layout_constraintVertical_bias="0.029"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/Music"
-        android:layout_width="100dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="518dp"
-        android:fontFamily="@font/fredoka"
-        android:gravity="center_horizontal"
-        android:text="Music"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@id/music_popUp"
+
+    <ImageView
+        android:id="@+id/mute_music"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/mute_icon"
+        android:layout_marginTop="140dp"
+        android:visibility="visible"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/music_popUp"
+        app:layout_constraintEnd_toEndOf="@+id/music_popUp"
+        app:layout_constraintStart_toStartOf="@+id/music_popUp"
+        app:layout_constraintTop_toTopOf="@+id/music_popUp" />
+
+    <ImageView
+        android:id="@+id/unmute_music"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/vol_icon"
+        android:layout_marginTop="140dp"
+        android:visibility="invisible"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/music_popUp"
+        app:layout_constraintEnd_toEndOf="@+id/music_popUp"
+        app:layout_constraintStart_toStartOf="@+id/music_popUp"
+        app:layout_constraintTop_toTopOf="@+id/music_popUp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:textColorHint="@color/gray"
+        app:boxBackgroundMode="outline"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginTop="110dp"
         app:layout_constraintEnd_toEndOf="@id/music_popUp"
-        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="@id/music_popUp"
         app:layout_constraintTop_toTopOf="@id/music_popUp"
-        app:layout_constraintVertical_bias="0.391" />
-
-    <ImageView
-        android:id="@+id/unmuteIcon"
-        android:layout_width="147dp"
-        android:layout_height="149dp"
-        app:layout_constraintBottom_toBottomOf="@id/music_popUp"
-        app:layout_constraintEnd_toEndOf="@id/music_popUp"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@id/music_popUp"
-        app:layout_constraintTop_toBottomOf="@id/Music"
-        app:layout_constraintVertical_bias="0.752"
-        app:srcCompat="@drawable/vol_icon" />
-
-    <ImageView
-        android:id="@+id/muteIcon"
-        android:layout_width="147dp"
-        android:layout_height="149dp"
-        android:alpha="0"
-        app:layout_constraintBottom_toBottomOf="@id/music_popUp"
-        app:layout_constraintEnd_toEndOf="@id/music_popUp"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@id/music_popUp"
-        app:layout_constraintTop_toBottomOf="@id/Music"
-        app:layout_constraintVertical_bias="0.752"
-        app:srcCompat="@drawable/mute_icon" />
+        >
+        <AutoCompleteTextView
+            android:fontFamily="@font/fredoka"
+            android:hint="SELECT MUSIC"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:textColor="@color/dark_gray"
+            android:id="@+id/music_auto_complete_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:enabled="false"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,4 +11,6 @@
     <color name="light_pink">#FFEEF3</color>
     <color name="dark_red">#Be2528</color>
     <color name="dark_green">#006400</color>
+    <color name="dark_gray">#525252</color>
+    <color name="gray">#808080</color>
 </resources>

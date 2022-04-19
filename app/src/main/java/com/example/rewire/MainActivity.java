@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends App {
-    MediaPlayer musicPlayer;
-    Music musicObject = new Music();
     Button cbt, bt;
 
     @Override
@@ -25,13 +23,6 @@ public class MainActivity extends App {
         bt = findViewById(R.id.breathing_btn);
         cbt.setOnClickListener(v -> startCBT());
         bt.setOnClickListener(v -> startBT());
-    }
-
-    private void playMusic() {
-        musicPlayer = MediaPlayer.create(this, R.raw.lofi);
-        musicPlayer.setLooping(true);
-        musicPlayer.setVolume(70,700);
-        musicPlayer.start();
     }
 
     private void startCBT() {
