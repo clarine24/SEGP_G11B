@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
-import android.text.method.ScrollingMovementMethod;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -58,7 +58,6 @@ public abstract class App extends AppCompatActivity {
 
         musicDialog = new Dialog(this);
         header.hbg_menu_music.setOnClickListener(view -> setMusicDialog());
-
     }
 
     void toHomeMenu() {
@@ -81,7 +80,8 @@ public abstract class App extends AppCompatActivity {
 
     private void initInfoText(Dialog dialog, int infoID) {
         infoText = dialog.findViewById(infoID);
-        infoText.setMovementMethod(new ScrollingMovementMethod());
+        infoText.setMovementMethod(LinkMovementMethod.getInstance());
+        infoText.setLinkTextColor(getResources().getColor(R.color.teal_700));
     }
 
     void closeDialog(Dialog dialog) {
@@ -97,6 +97,7 @@ public abstract class App extends AppCompatActivity {
     private void setDocDialog() {
         initDialog(docDialog,R.layout.documentation_pop_up);
         initCloseImageView(docDialog,R.id.exitbuttondoc);
+        initInfoText(docDialog,R.id.documentationInfo);
     }
 
     void setMusicDialog() {

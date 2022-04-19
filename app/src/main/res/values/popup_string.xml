@@ -11,4 +11,21 @@
         \nMorhaf Allababidi
         \nMuhammad Danial Amsyar Mohd Razali
     </string>
+
+    <string name="docTitle">Extra Readings</string>
+    <string name="docInfo"><b>Learn more about Generalised Anxiety Disorder (GAD):</b>
+        \n1. <a href="https://adaa.org/understanding-anxiety/generalized-anxiety-disorder-gad">What is GAD?</a>
+        \n2. <a href="https://adaa.org/resources-professionals/practice-guidelines-gad">Clinical Practice for GAD</a>
+        \n
+        \n<b>Learn more about Breathing Techniques:</b>
+        \n1. <a href="https://www.verywellmind.com/what-is-4-7-8-breathing-5204438">Effects of 4-7-8 Breathing Technique</a>
+        \n2. <a href="https://www.uofmhealth.org/health-library/uz2255">Various Breathing Exercises</a>
+        \n
+        \n<b>Learn more about CBT and Cognitive Distortions</b>
+        \n1. <a href="https://positivepsychology.com/cbt-cognitive-behavioral-therapy-techniques-worksheets/">CBT Techniques and Cognitive Distortions</a>
+        \n2. <a href="https://drchristinavillarreal.com/2010/03/30/15-common-cognitive-distortions-how-thoughts-influence-mental-health/">Cognitive Distortions and Their Influence</a>
+        \n
+        \n<b>General Reading:</b>
+        \n<a href="https://www.australiacounselling.com.au/stress-anxiety-tips-expert-therapists/">Tips for Beating Stress and Anxiety</a>
+    </string>
 </resources>
