@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aboutTitle">About App</string>
+    <string name="aboutInfo">\t\t\tRewire is a science-based application that tackles Generalised Anxiety Disorder (GAD). This app is based on standard medical interventions used by psychologists.
+        \n\t\t\tWe hope to raise awareness of GAD by educating people about GAD. Our goal is to reach out to those suffering from GAD, especially those that do not have access to psychologists and therapists due to various reasons.
+        \n
+        \n<b>Developers:</b>
+        \nAqaalpreet Singh Baldeb Singh
+        \nChow Yuan Yu
+        \nClarine Tan Kaili
+        \nMorhaf Allababidi
+        \nMuhammad Danial Amsyar Mohd Razali
+    </string>
+</resources>

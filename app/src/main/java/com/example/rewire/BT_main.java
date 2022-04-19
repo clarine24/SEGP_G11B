@@ -118,6 +118,18 @@ public class BT_main extends AppRunning {
     }
 
     @Override
+    void initDialog(Dialog dialog, int viewID, int cancelButtonID) {
+        pauseTimers();
+        super.initDialog(dialog, viewID, cancelButtonID);
+    }
+
+    @Override
+    void closeDialog(Dialog dialog) {
+        super.closeDialog(dialog);
+        resumeTimers();
+    }
+
+    @Override
     void setCloseButton() {
         super.setCloseButton();
         resumeTimers();
@@ -131,39 +143,9 @@ public class BT_main extends AppRunning {
     }
 
     @Override
-    void setInfoDialog() {
-        pauseTimers();
-        super.setInfoDialog();
-    }
-
-    @Override
-    void cancelButton_InfoDialog() {
-        super.cancelButton_InfoDialog();
-        resumeTimers();
-    }
-
-    @Override
-    void setDocDialog() {
-        pauseTimers();
-        super.setDocDialog();
-    }
-
-    @Override
-    void cancelButton_DocDialog() {
-        super.cancelButton_DocDialog();
-        resumeTimers();
-    }
-
-    @Override
     void setMusicDialog() {
         pauseTimers();
         super.setMusicDialog();
-    }
-
-    @Override
-    void cancelButton_MusicDialog() {
-        super.cancelButton_MusicDialog();
-        resumeTimers();
     }
 
     private void countdownStart() {

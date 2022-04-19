@@ -39,11 +39,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/fredoka"
-        android:text="About App"
+        android:text="@string/aboutTitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/info_popUp"
         app:layout_constraintStart_toStartOf="@+id/info_popUp"
         app:layout_constraintTop_toTopOf="@id/info_popUp" />
+
+    <TextView
+        android:id="@+id/about_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/fredoka"
+        android:scrollbars="vertical"
+        android:text="@string/aboutInfo"
+        android:textAlignment="viewStart"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_popUp"
+        app:layout_constraintEnd_toEndOf="@+id/info_popUp"
+        app:layout_constraintStart_toStartOf="@+id/info_popUp"
+        app:layout_constraintTop_toBottomOf="@+id/About" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
