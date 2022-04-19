@@ -3,9 +3,11 @@ package com.example.rewire;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.widget.Button;
 
 public class AppRunning extends App {
     Dialog exitToHomeDialog;
+    Button closeButton, exitButton;
 
     @Override
     void setHeader() {
@@ -15,23 +17,23 @@ public class AppRunning extends App {
 
     @Override
     void toHomeMenu() {
-        exitToHomeDialog.setContentView(R.layout.exit_to_home_popup);
-        exitToHomeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        closeButton = exitToHomeDialog.findViewById(R.id.closeButton);
-        exitButton = exitToHomeDialog.findViewById(R.id.exitButton);
-
-        closeButton.setOnClickListener(v -> setCloseButton());
-        exitButton.setOnClickListener(v -> setExitButton());
-
-        exitToHomeDialog.show();
+        initDialog(exitToHomeDialog,R.layout.exit_to_home_popup);
+        initCloseButton(exitToHomeDialog,R.id.closeButton);
+        initExitButton(exitToHomeDialog,R.id.exitButton);
     }
 
-    void setCloseButton() {
-        exitToHomeDialog.dismiss();
+    private void initCloseButton(Dialog dialog, int closeButtonID) {
+        closeButton = dialog.findViewById(closeButtonID);
+        closeButton.setOnClickListener(v -> closeDialog(dialog));
     }
 
-    void setExitButton() {
-        setCloseButton();
+    void initExitButton(Dialog dialog, int exitButtonID) {
+        exitButton = dialog.findViewById(exitButtonID);
+        exitButton.setOnClickListener(v -> exitOnClick(dialog));
+    }
+
+    void exitOnClick(Dialog dialog) {
+        dialog.dismiss();
         super.toHomeMenu();
     }
 }

@@ -12,7 +12,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,8 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public abstract class App extends AppCompatActivity {
     Header header;
     Dialog infoDialog, docDialog, musicDialog;
-    ImageView cancelButton;
-    Button exitButton, closeButton;
+    ImageView closeButton;
     TextView infoText;
 
     MediaPlayer musicPlayer;
@@ -69,13 +67,16 @@ public abstract class App extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void initDialog(Dialog dialog, int viewID, int cancelButtonID) {
+    void initDialog(Dialog dialog, int viewID) {
         initButtonView();
         dialog.setContentView(viewID);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        cancelButton = dialog.findViewById(cancelButtonID);
-        cancelButton.setOnClickListener(v -> closeDialog(dialog));
         dialog.show();
+    }
+
+    private void initCloseImageView(Dialog dialog, int closeButtonID) {
+        closeButton = dialog.findViewById(closeButtonID);
+        closeButton.setOnClickListener(v -> closeDialog(dialog));
     }
 
     private void initInfoText(Dialog dialog, int infoID) {
@@ -88,16 +89,19 @@ public abstract class App extends AppCompatActivity {
     }
 
     void setInfoDialog() {
-        initDialog(infoDialog,R.layout.about_pop_up,R.id.exitbuttoninfo);
+        initDialog(infoDialog,R.layout.about_pop_up);
+        initCloseImageView(infoDialog,R.id.exitbuttoninfo);
         initInfoText(infoDialog,R.id.about_info);
     }
 
     private void setDocDialog() {
-        initDialog(docDialog,R.layout.documentation_pop_up,R.id.exitbuttondoc);
+        initDialog(docDialog,R.layout.documentation_pop_up);
+        initCloseImageView(docDialog,R.id.exitbuttondoc);
     }
 
     void setMusicDialog() {
-        initDialog(musicDialog,R.layout.music_pop_up,R.id.exitbuttonmusic);
+        initDialog(musicDialog,R.layout.music_pop_up);
+        initCloseImageView(musicDialog,R.id.exitbuttonmusic);
 
         muteMusic = musicDialog.findViewById(R.id.mute_music);
         unmuteMusic = musicDialog.findViewById(R.id.unmute_music);

@@ -102,25 +102,14 @@ public class BT_main extends AppRunning {
             onStart();
         });
 
-        homeButton = endPrompt.findViewById(R.id.exit_to_home_btn);
-        homeButton.setOnClickListener(view -> {
-            endPrompt.dismiss();
-            finish();
-        });
-
+        initExitButton(endPrompt,R.id.exit_to_home_btn);
         endPrompt.show();
     }
 
     @Override
-    void toHomeMenu() {
+    void initDialog(Dialog dialog, int viewID) {
         pauseTimers();
-        super.toHomeMenu();
-    }
-
-    @Override
-    void initDialog(Dialog dialog, int viewID, int cancelButtonID) {
-        pauseTimers();
-        super.initDialog(dialog, viewID, cancelButtonID);
+        super.initDialog(dialog, viewID);
     }
 
     @Override
@@ -130,22 +119,12 @@ public class BT_main extends AppRunning {
     }
 
     @Override
-    void setCloseButton() {
-        super.setCloseButton();
-        resumeTimers();
-    }
-
-    @Override
-    void setExitButton() {
-        super.setCloseButton();
-        initButtonView();
+    void exitOnClick(Dialog dialog) {
+        timerProgress.resetProgressBar(1);
+        roundProgress.resetProgressBar(1);
+        round.setText("");
+        super.exitOnClick(dialog);
         finish();
-    }
-
-    @Override
-    void setMusicDialog() {
-        pauseTimers();
-        super.setMusicDialog();
     }
 
     private void countdownStart() {
