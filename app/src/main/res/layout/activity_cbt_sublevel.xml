@@ -14,75 +14,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" >
 
-        <Button
-            android:id="@+id/scenario1"
-            android:layout_width="320dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="288dp"
-            android:layout_marginEnd="1dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Scenario 1"
-            android:textColor="@android:color/white"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/scenario2"
-            android:layout_width="320dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Scenario 2"
-            android:textSize="34sp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scenario1"
-            app:layout_constraintVertical_bias="0.044" />
-
-        <ImageButton
-            android:id="@+id/scenario2_lock"
-            android:layout_width="325dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="60dp"
-            android:backgroundTint="@color/dark_pink"
-            android:src="@drawable/lock_icon"
-            android:clickable="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scenario1" />
-
-        <Button
-            android:id="@+id/scenario3"
-            android:layout_width="320dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Scenario 3"
-            android:textSize="34sp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scenario2"
-            app:layout_constraintVertical_bias="0.072" />
-
-        <ImageButton
-            android:id="@+id/scenario3_lock"
-            android:layout_width="325dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="60dp"
-            android:backgroundTint="@color/dark_pink"
-            android:src="@drawable/lock_icon"
-            android:clickable="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scenario2" />
     </com.example.rewire.Header>
 
     <TextView
@@ -99,5 +30,68 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174" />
+
+    <Button
+        android:id="@+id/scenario1"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Scenario 1"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/scenario2"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Scenario 2"
+        android:textSize="34sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/scenario3_lock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/scenario1" />
+
+    <ImageButton
+        android:id="@+id/scenario2_lock"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/dark_pink"
+        android:clickable="false"
+        android:src="@drawable/lock_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/scenario2"
+        app:layout_constraintEnd_toEndOf="@+id/scenario2"
+        app:layout_constraintStart_toStartOf="@+id/scenario2"
+        app:layout_constraintTop_toTopOf="@+id/scenario2" />
+
+    <Button
+        android:id="@+id/scenario3"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="100dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Scenario 3"
+        android:textSize="34sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/header" />
+
+    <ImageButton
+        android:id="@+id/scenario3_lock"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/dark_pink"
+        android:clickable="false"
+        android:src="@drawable/lock_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/scenario3"
+        app:layout_constraintEnd_toEndOf="@+id/scenario3"
+        app:layout_constraintStart_toStartOf="@+id/scenario3"
+        app:layout_constraintTop_toTopOf="@+id/scenario3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

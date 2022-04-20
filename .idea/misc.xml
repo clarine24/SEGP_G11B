@@ -28,8 +28,8 @@
         <entry key="app/src/main/res/layout/activity_breathing_technique_prompt.xml" value="0.28888888888888886" />
         <entry key="app/src/main/res/layout/activity_breathing_technique_start_prompt.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_cbt_game.xml" value="0.28888888888888886" />
-        <entry key="app/src/main/res/layout/activity_cbt_question_answer.xml" value="0.28888888888888886" />
-        <entry key="app/src/main/res/layout/activity_cbt_sublevel.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_cbt_question_answer.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_cbt_sublevel.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_in_game_educationalpage.xml" value="0.32098765432098764" />
         <entry key="app/src/main/res/layout/activity_in_game_educationalpage2.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_in_game_educationalpage3.xml" value="0.19610507246376813" />

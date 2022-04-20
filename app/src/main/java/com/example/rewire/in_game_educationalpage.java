@@ -1,29 +1,15 @@
 package com.example.rewire;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
+import android.text.method.LinkMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-
-public class in_game_educationalpage extends AppRunning implements View.OnClickListener {
-    int page = 1;
-
-    ImageView back;
-    ImageView next;
-    ImageView pageA;
-    ImageView pageB;
-    ImageView pageC;
-    Drawable draw;
-
-    InputStream inputStream;
-    BufferedReader bufferedReader;
-    StringBuffer stringBuffer;
+public class in_game_educationalpage extends AppRunning {
     TextView eduTitle, eduInfo;
+    static String level, scene, id;
+    ImageView next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,106 +20,30 @@ public class in_game_educationalpage extends AppRunning implements View.OnClickL
 
         eduTitle = findViewById(R.id.edu_title);
         eduInfo = findViewById(R.id.edu_info);
-        //displayText();
 
-        back = findViewById(R.id.edu_back);
         next = findViewById(R.id.edu_next);
-
-        pageA = findViewById(R.id.edu_pageA);
-        pageB = findViewById(R.id.edu_pageB);
-        pageC = findViewById(R.id.edu_pageC);
-
-        back.setOnClickListener(this);
-        next.setOnClickListener(this);
+        next.setOnClickListener(view -> toScenario());
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.edu_back:
-                page--;
-                break;
-            case R.id.edu_next:
-                page++;
-                break;
-        }
-
-        if (page > 3) {
-            Intent intent = new Intent(in_game_educationalpage.this, cbt_qa.class);
-            startActivity(intent);
-        }
-
-        if (page < 1) {
-            page = 1;
-        }
-
-        backButton();
-        switchPage();
-    }
-
-    private void backButton() {
-        if (page == 1) {
-            back.setVisibility(View.INVISIBLE);
-        }
-        else {
-            back.setVisibility(View.VISIBLE);
-        }
-    }
-
-    private void switchPage() {
-        if (page == 1) {
-            drawBlack(pageA);
-
-            drawWhite(pageB);
-            drawWhite(pageC);
-        }
-        else if (page == 2) {
-            drawBlack(pageB);
-
-            drawWhite(pageA);
-            drawWhite(pageC);
-        }
-        else if (page == 3){
-            drawBlack(pageC);
-
-            drawWhite(pageA);
-            drawWhite(pageB);
-        }
-    }
-
-    private void drawBlack(ImageView page) {
-        String black = "@drawable/bt_circle_black_fill";
-        int blackImage = getResources().getIdentifier(black, null, getPackageName());
-        draw = getResources().getDrawable(blackImage);
-
-        page.setImageDrawable(draw);
-    }
-
-    private void drawWhite(ImageView page) {
-        String white = "@drawable/bt_circle_white_fill";
-        int whiteImage = getResources().getIdentifier(white, null, getPackageName());
-        draw = getResources().getDrawable(whiteImage);
-
-        page.setImageDrawable(draw);
+    protected void onStart() {
+        super.onStart();
+        level = String.valueOf(CBT_Game.level);
+        scene = String.valueOf(CBT_Sublevel.scene);
+        id = "Level" + level + "_Scene" + scene;
+        displayText();
     }
 
     private void displayText() {
-        /*inputStream = this.getResources().openRawResource(R.raw.testing);
-        bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-        stringBuffer = new StringBuffer();
+        int titleID = this.getResources().getIdentifier(id + "_Title", "string", this.getPackageName());
+        int infoID = this.getResources().getIdentifier(id + "_Info", "string", this.getPackageName());
+        eduTitle.setText(titleID);
+        eduInfo.setText(infoID);
+        eduInfo.setMovementMethod(LinkMovementMethod.getInstance());
+    }
 
-        String text = "";
-
-        if (inputStream != null) {
-            try {
-                while ((text = bufferedReader.readLine()) != null) {
-                    stringBuffer.append(text + "\n");
-                }
-
-                eduInfo.setText(stringBuffer);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }*/
+    private void toScenario() {
+        Intent intent = new Intent(in_game_educationalpage.this, cbt_qa.class);
+        startActivity(intent);
     }
 }

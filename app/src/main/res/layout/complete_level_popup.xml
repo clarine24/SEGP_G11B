@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="@+id/congrats" />
 
     <Button
-        android:id="@+id/selectlevel_Btn"
+        android:id="@+id/selectlevel"
         android:layout_width="200dp"
         android:layout_height="78dp"
         android:layout_marginBottom="10dp"

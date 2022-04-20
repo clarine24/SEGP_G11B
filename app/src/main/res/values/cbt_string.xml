@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Level1_Scene1_Title">Filtering</string>
+    <string name="Level1_Scene1_Info">Negative filtering is a common cognitive distortion, and most of us do it from time to time. We filter out all positive information about a specific situation and only dwell on the negative. In other words, negative filtering is focusing on negative things and discounting positive things.</string>
+    <string name="Level1_Scene1_Question">Sam solved the entire Math test correctly except for one question worth 10%.
+        \n\nHow should Sam react?
+    </string>
+    <string name="Level1_Scene1_OptionA">I have done well; I will work harder to get higher next time.</string>
+    <string name="Level1_Scene1_OptionB">I can’t believe this! This is going to destroy my grade.</string>
+    <string name="Level1_Scene1_OptionC">It is a good result, but that 10% is bothering me.</string>
+    <string name="Level1_Scene1_Ans">A</string>
+
+    <string name="Level1_Scene2_Title">Polarized Thinking</string>
+    <string name="Level1_Scene2_Info">Polarized thinking is also known as black and white thinking. It is irrational thinking characterized by the “all or nothing” principle. People with this unrealistic expectation do not see gray areas in most situations; hence, they often feel frustrated, bitter, and disappointed.</string>
+    <string name="Level1_Scene2_Question">Alex is working with Tom on a school project. They have different opinions on how to approach the task.
+        \n\nHow should Alex feel about Tom?
+    </string>
+    <string name="Level1_Scene2_OptionA">Tom will never understand my thought process.</string>
+    <string name="Level1_Scene2_OptionB">I know that I am right, and he is wrong.</string>
+    <string name="Level1_Scene2_OptionC">He has his argument. I have mine. I am sure we will find a midpoint.</string>
+    <string name="Level1_Scene2_Ans">C</string>
+
+    <string name="Level1_Scene3_Title">Control Fallacies</string>
+    <string name="Level1_Scene3_Info">This distortion is the way of thinking characterized by believing that one is “externally controlled” or has “internal control”. Being externally controlled refers to viewing oneself as a powerless victim of fate; internally controlled means believing that our actions were the cause of something. This causes us to blame others or ourselves, luck, or other external sources for negativities that happen in their lives.</string>
+    <string name="Level1_Scene3_Question">Emma could not complete the assignment that was due today.
+        \n\nHow should Emma react?
+    </string>
+    <string name="Level1_Scene3_OptionA">School is overworking me, and my friends are so noisy in class. How can I work like that?</string>
+    <string name="Level1_Scene3_OptionB">I am not capable of doing anything, which is why I couldn’t complete this assignment on time.</string>
+    <string name="Level1_Scene3_OptionC">I should have gone to the study room and worked earlier. I will do that next time.</string>
+    <string name="Level1_Scene3_Ans">C</string>
+
+    <string name="Level2_Scene1_Title">Fallacy of Fairness</string>
+    <string name="Level2_Scene1_Info">Fallacy of fairness is an irrational cognitive framework in which someone feels resentful because he thinks he knows what is fair, but others do not. Those with this kind of unrealistic thinking usually say that “Life is unfair” if things do not go their way. They often assess situations based on their “fairness”; hence, they often feel frustrated because life is not always fair in reality.</string>
+    <string name="Level2_Scene1_Question">Ahmad has been working in a company for 10 years. His friend, who has only been working for 2 years, got a promotion.
+        \n\nHow should Ahmad feel?
+    </string>
+    <string name="Level2_Scene1_OptionA">I should have gotten the promotion as I have worked longer. Life is unfair.</string>
+    <string name="Level2_Scene1_OptionB">This is not fair! I have more experience and worked longer.</string>
+    <string name="Level2_Scene1_OptionC">He is a hard worker, well deserved. Hopefully, I will get promoted soon too. </string>
+    <string name="Level2_Scene1_Ans">C</string>
+
+    <string name="Level2_Scene2_Title">Overgeneralization</string>
+    <string name="Level2_Scene2_Info">When we overgeneralize something, we take a single negative event and turn it into a never-ending pattern of loss and defeat. With overgeneralization, words like “always,” “never,” “everything,” and “nothing” are frequent in your train of thought. Overgeneralization can also manifest in our thoughts about the world and its events.</string>
+    <string name="Level2_Scene2_Question">You speak up in a team meeting, but your suggestion is not included in the project.
+        \n\nHow should you react?
+    </string>
+    <string name="Level2_Scene2_OptionA">I never say the right thing!</string>
+    <string name="Level2_Scene2_OptionB">There were many other good ideas presented. I should think of better ideas in the future.</string>
+    <string name="Level2_Scene2_OptionC">I ruined my chances for a promotion.</string>
+    <string name="Level2_Scene2_Ans">B</string>
+
+    <string name="Level2_Scene3_Title">Emotional Reasoning</string>
+    <string name="Level2_Scene3_Info">Emotional reasoning is a way of thinking characterized by focusing too much on emotions and ignoring common sense. For instance, a person with this unrealistic thought pattern often believes that what he feels is always true or right. He dangerously bases all his decisions on gut feel.</string>
+    <string name="Level2_Scene3_Question">Monica drove once on a freeway during rush hour and had a close call. She was terrified by that incident.
+        \n\nHow should Monica feel about the freeway next time?
+    </string>
+    <string name="Level2_Scene3_OptionA">I am getting nervous driving on this road, but I will hopefully pass safely as long as I am careful.</string>
+    <string name="Level2_Scene3_OptionB">I am really nervous now. I will have another accident.</string>
+    <string name="Level2_Scene3_OptionC">Another accident will happen for sure. I can feel it.</string>
+    <string name="Level2_Scene3_Ans">A</string>
+
+    <string name="Level3_Scene1_Title">Fallacy of Change</string>
+    <string name="Level3_Scene1_Info">We expect others to change after being encouraged or pressured. Those with this unrealistic thought pattern often think that they can make a person “better” with their efforts. This is often manifested in relationships. It is damaging to think this way as we rely on others for our happiness.</string>
+    <string name="Level3_Scene1_Question">Eva supports a golf player and continuously expects her friend to support the same player.
+        \n\nEva’s expectations were not fulfilled; how should she feel?
+    </string>
+    <string name="Level3_Scene1_OptionA">I am really upset with my friend. She should support my favourite player.</string>
+    <string name="Level3_Scene1_OptionB">I will break ties with her. Surely then she will support my favourite player.</string>
+    <string name="Level3_Scene1_OptionC">She has every right to support or not support my favourite player.</string>
+    <string name="Level3_Scene1_Ans">C</string>
+
+    <string name="Level3_Scene2_Title">"Shoulds"</string>
+    <string name="Level3_Scene2_Info">We have a list of ironclad rules about how others and we should behave. We have too many expectations such as “I should be more attractive”, “He should be a good husband”, “This event ought to please them”, etc. People with this unrealistic cognitive framework easily get angry or disappointed when somebody does not follow the “rules”. When they break their own “rules”, they feel guilty.</string>
+    <string name="Level3_Scene2_Question">Lori has a phobia of airplanes. Her doctor prescribed medication. But her phobia has been getting worse over the years.
+        \n\nHow should Lori react to her worsening condition?
+    </string>
+    <string name="Level3_Scene2_OptionA">I must get over this fear. I shouldn’t be afraid.</string>
+    <string name="Level3_Scene2_OptionB">I am an adult; I must be comfortable on planes, for goodness sake.</string>
+    <string name="Level3_Scene2_OptionC">I wish I wasn’t scared, but I accept the situation, and I will work on it.</string>
+    <string name="Level3_Scene2_Ans">C</string>
+
+    <string name="Level3_Scene3_Title">Catastrophizing</string>
+    <string name="Level3_Scene3_Info">Catastrophizing is also known as Magnifying or Minimizing. It is a way of thinking characterized by believing that the worst will happen or has happened. This pessimistic cognitive framework has two general types. The first one is magnifying the negatives of a present situation. The second type is catastrophizing a future occurrence.</string>
+    <string name="Level3_Scene3_Question">Max has had a job interview lately. The company has decided not to hire him.
+        \n\nHow should Max react to the decision?
+    </string>
+    <string name="Level3_Scene3_OptionA">What if I never get a job in my life? I will be homeless.</string>
+    <string name="Level3_Scene3_OptionB">It is not the end of the world. I will eventually get a job.</string>
+    <string name="Level3_Scene3_OptionC">They have missed a fantastic employee for their company.</string>
+    <string name="Level3_Scene3_Ans">B</string>
+
+    <string name="Level4_Scene1_Title">Heaven’s Reward Fallacy</string>
+    <string name="Level4_Scene1_Info">This belief is related to the Fallacy of Fairness, in that if we lived in a fair world, we would be rewarded fairly. This cognitive distortion is based on the reasoning that we should be rewarded based on how hard we work. Similar to the Fallacy of Fairness, we will be disappointed because most things, in reality, aren’t fair.</string>
+    <string name="Level4_Scene1_Question">A wife works full-time and cooks, cleans, and takes care of the house. She has never been rewarded for her hard work.
+        \n\nHow should the wife feel?
+    </string>
+    <string name="Level4_Scene1_OptionA">I am not working for rewards. I am working on my own will.</string>
+    <string name="Level4_Scene1_OptionB">I will never work hard again. Nobody is rewarding me with anything.</string>
+    <string name="Level4_Scene1_OptionC">I am sure I will be rewarded someday.</string>
+    <string name="Level4_Scene1_Ans">A</string>
+
+    <string name="Level4_Scene2_Title">Always Being Right</string>
+    <string name="Level4_Scene2_Info">Always being right is an irrational way of thinking characterized by the need to prove themselves right by constantly proving others’ opinions wrong. People with this unrealistic mindset cannot accept that they can commit mistakes. Hence, they will do everything in their power to show others that they are correct.</string>
+    <string name="Level4_Scene2_Question">Sara’s mother gets emotionally tired when arguing with her daughter.
+        \n\nHow should Sara react?
+    </string>
+    <string name="Level4_Scene2_OptionA">I don’t care how you feel. I am winning this argument no matter what because I am always right.</string>
+    <string name="Level4_Scene2_OptionB">I might be wrong on this one.</string>
+    <string name="Level4_Scene2_OptionC">There is no doubt that I am right. I will win this argument.</string>
+    <string name="Level4_Scene2_Ans">B</string>
+
+    <string name="Level4_Scene3_Title">Personalization</string>
+    <string name="Level4_Scene3_Info">This cognitive distortion is characterized by believing that what others say or do is somehow personally relevant. Those with this kind of unrealistic thought pattern perceive random comments directed toward them. They also usually compare themselves to others, making them feel envious or threatened.</string>
+    <string name="Level4_Scene3_Question">A mother sent her son to buy grocery items. On the way there, her son had a car accident.
+        \n\nHow should the mother feel?
+    </string>
+    <string name="Level4_Scene3_OptionA">I am a terrible mother. It is all my fault I should not have sent him.</string>
+    <string name="Level4_Scene3_OptionB">I was the reason he got into an accident.</string>
+    <string name="Level4_Scene3_OptionC">It was just an accident. He should have been more careful.</string>
+    <string name="Level4_Scene3_Ans">C</string>
+
+    <string name="Level5_Scene1_Title">Jumping to Conclusions</string>
+    <string name="Level5_Scene1_Info">This is an irrational way of thinking that something will happen just based on a gut feeling. Individuals with this unrealistic thought pattern also firmly believe that certain people will behave in a certain way as if they can read minds or predict the future.</string>
+    <string name="Level5_Scene1_Question">Your father comes home looking serious.
+        \n\nHow should you react?
+    </string>
+    <string name="Level5_Scene1_OptionA">He is surely mad at me.</string>
+    <string name="Level5_Scene1_OptionB">Did I do anything wrong today?</string>
+    <string name="Level5_Scene1_OptionC">Hey dad, what’s up? Are you alright?</string>
+    <string name="Level5_Scene1_Ans">C</string>
+
+    <string name="Level5_Scene2_Title">Blaming</string>
+    <string name="Level5_Scene2_Info">Blaming is an irrational way of thinking evidenced by frequently holding others responsible for their suffering. On the other hand, some may manifest the opposite view by blaming themselves for every concern. </string>
+    <string name="Level5_Scene2_Question">Peter and Molly recently got divorced.
+        \n\nHow should either react when asked about the divorce?
+    </string>
+    <string name="Level5_Scene2_OptionA">He/she is to blame. He/she is always wrong.</string>
+    <string name="Level5_Scene2_OptionB">It is entirely on me. I messed everything up.</string>
+    <string name="Level5_Scene2_OptionC">I wish him/her all the best. We didn’t come along well, but respect is still there.</string>
+    <string name="Level5_Scene2_Ans">C</string>
+
+    <string name="Level5_Scene3_Title">Global Labelling</string>
+    <string name="Level5_Scene3_Info">Global labelling, also termed mislabelling, is an irrational way of thinking characterized by merely using one or two encounters as a general assumption of someone’s personality or behaviour. People with this unhealthy cognition do not try to understand the context of an action.</string>
+    <string name="Level5_Scene3_Question">Your classmate, Joe, missed the report submission deadline.
+        \n\nWhat should you think about him?
+    </string>
+    <string name="Level5_Scene3_OptionA">He has terrible time management.</string>
+    <string name="Level5_Scene3_OptionB">He is not a hard worker like I am.</string>
+    <string name="Level5_Scene3_OptionC">Maybe something happened to him. He will get back on track.</string>
+    <string name="Level5_Scene3_Ans">C</string>
+</resources>

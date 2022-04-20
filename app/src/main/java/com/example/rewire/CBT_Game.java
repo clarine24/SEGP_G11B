@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class CBT_Game extends App implements View.OnClickListener{
-    public static int level = 0;
+    static int level = 1, levelUnlock;
+    private Button level1, level2, level3, level4, level5;
+    private ImageButton lock2, lock3, lock4, lock5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,20 +18,46 @@ public class CBT_Game extends App implements View.OnClickListener{
 
         setHeader();
 
-        final Button level1 = findViewById(R.id.level1);
+        level1 = findViewById(R.id.level1);
+        level2 = findViewById(R.id.level2);
+        level3 = findViewById(R.id.level3);
+        level4 = findViewById(R.id.level4);
+        level5 = findViewById(R.id.level5);
+
         level1.setOnClickListener(this);
-
-        final Button level2 = findViewById(R.id.level2);
         level2.setOnClickListener(this);
-
-        final Button level3 = findViewById(R.id.level3);
         level3.setOnClickListener(this);
-
-        final Button level4 = findViewById(R.id.level4);
         level4.setOnClickListener(this);
-
-        final Button level5 = findViewById(R.id.level5);
         level5.setOnClickListener(this);
+
+        lock2 = findViewById(R.id.level2_lock);
+        lock3 = findViewById(R.id.level3_lock);
+        lock4 = findViewById(R.id.level4_lock);
+        lock5 = findViewById(R.id.level5_lock);
+    }
+
+    @Override
+    protected void onStart() {
+        readFile();
+        unlockLevel();
+        super.onStart();
+    }
+
+    private void unlockLevel() {
+        switch (levelUnlock) {
+            case 5:
+                lock5.setVisibility(View.INVISIBLE);
+                level5.setVisibility(View.VISIBLE);
+            case 4:
+                lock4.setVisibility(View.INVISIBLE);
+                level4.setVisibility(View.VISIBLE);
+            case 3:
+                lock3.setVisibility(View.INVISIBLE);
+                level3.setVisibility(View.VISIBLE);
+            case 2:
+                lock2.setVisibility(View.INVISIBLE);
+                level2.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

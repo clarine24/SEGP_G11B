@@ -13,6 +13,8 @@ public class MainActivity extends App {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        writeFile();
+
         setHeader();
         header.home_btn.setVisibility(View.INVISIBLE);
 

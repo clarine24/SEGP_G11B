@@ -17,7 +17,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public abstract class App extends AppCompatActivity {
+    private static final String FILE_NAME = "data.txt";
     Header header;
     Dialog infoDialog, docDialog, musicDialog;
     ImageView closeButton;
@@ -78,7 +86,7 @@ public abstract class App extends AppCompatActivity {
         closeButton.setOnClickListener(v -> closeDialog(dialog));
     }
 
-    private void initInfoText(Dialog dialog, int infoID) {
+    private void initText(Dialog dialog, int infoID) {
         infoText = dialog.findViewById(infoID);
         infoText.setMovementMethod(LinkMovementMethod.getInstance());
         infoText.setLinkTextColor(getResources().getColor(R.color.teal_700));
@@ -91,13 +99,13 @@ public abstract class App extends AppCompatActivity {
     void setInfoDialog() {
         initDialog(infoDialog,R.layout.about_pop_up);
         initCloseImageView(infoDialog,R.id.exitbuttoninfo);
-        initInfoText(infoDialog,R.id.about_info);
+        initText(infoDialog,R.id.about_info);
     }
 
     private void setDocDialog() {
         initDialog(docDialog,R.layout.documentation_pop_up);
         initCloseImageView(docDialog,R.id.exitbuttondoc);
-        initInfoText(docDialog,R.id.documentationInfo);
+        initText(docDialog,R.id.documentationInfo);
     }
 
     void setMusicDialog() {
@@ -176,5 +184,60 @@ public abstract class App extends AppCompatActivity {
     private void unmuteMusic() {
         final float volume = (float) (1 - (Math.log(MAX_VOLUME - 90) / Math.log(MAX_VOLUME)));
         musicPlayer.setVolume(volume, volume);
+    }
+
+    void writeFile() {
+        String level = String.valueOf(CBT_Game.level);
+        String scene = String.valueOf(CBT_Sublevel.scene);
+
+        FileOutputStream file = null;
+        try {
+            file = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            file.write(level.getBytes());
+            file.write("\n".getBytes());
+            file.write(scene.getBytes());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (file != null) {
+                try {
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    void readFile() {
+        FileInputStream file = null;
+        try {
+            file = openFileInput(FILE_NAME);
+            InputStreamReader inputStreamReader = new InputStreamReader(file);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String text;
+
+            // Save last unlocked level
+            text = bufferedReader.readLine();
+            CBT_Game.levelUnlock = Integer.valueOf(text);
+
+            // Save last unlocked scene
+            text = bufferedReader.readLine();
+            CBT_Sublevel.sceneUnlock = Integer.valueOf(text);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (file != null) {
+                try {
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

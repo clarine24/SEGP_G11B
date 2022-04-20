@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class BT_main extends AppRunning {
     private Dialog startPrompt, endPrompt;
-    private Button startButton, restartButton, homeButton;
+    private Button startButton, restartButton;
     private SeekBar seekBar;
     private TextView numberOfRoundsInput;
     private int roundsNum;
