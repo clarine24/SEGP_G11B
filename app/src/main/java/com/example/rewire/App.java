@@ -36,6 +36,7 @@ public abstract class App extends AppCompatActivity {
     ImageView unmuteMusic;
     AutoCompleteTextView music_auto_complete_text;
     ArrayAdapter<String> soundtrackAdapter;
+    int SOUNDTRACK = 1;
     private final static int MAX_VOLUME = 100;
 
     @Override
@@ -115,33 +116,50 @@ public abstract class App extends AppCompatActivity {
         muteMusic = musicDialog.findViewById(R.id.mute_music);
         unmuteMusic = musicDialog.findViewById(R.id.unmute_music);
 
-        muteMusic.setOnClickListener(v -> {
+        unmuteMusic.setOnClickListener(v -> {
             muteMusic();
+            muteMusic.setVisibility(View.VISIBLE);
+            unmuteMusic.setVisibility(View.INVISIBLE);
+        });
+
+        muteMusic.setOnClickListener(v -> {
+            unmuteMusic();
             muteMusic.setVisibility(View.INVISIBLE);
             unmuteMusic.setVisibility(View.VISIBLE);
         });
 
-        unmuteMusic.setOnClickListener(v -> {
-            unmuteMusic();
-            muteMusic.setVisibility(View.VISIBLE);
-            unmuteMusic.setVisibility(View.INVISIBLE);
-        });
 
         String[] soundtracks = {"LOFI", "AMBIENCE", "CHILL"};
 
         music_auto_complete_text = musicDialog.findViewById(R.id.music_auto_complete_text);
         soundtrackAdapter = new ArrayAdapter<String>(this, R.layout.music_drop_down_layout, soundtracks);
         music_auto_complete_text.setAdapter(soundtrackAdapter);
+        music_auto_complete_text.setHintTextColor(Color.BLACK);
+
+        if (SOUNDTRACK == 1) {
+            music_auto_complete_text.setHint("LOFI");
+        }
+
+        if (SOUNDTRACK == 2) {
+            music_auto_complete_text.setHint("AMBIENCE");
+        }
+
+        if (SOUNDTRACK == 3) {
+            music_auto_complete_text.setHint("CHILL");
+        }
 
         music_auto_complete_text.setOnItemClickListener((parent, view, position, id) -> {
             String soundtrackSelected = parent.getItemAtPosition(position).toString();
             if (soundtrackSelected == "LOFI") {
+                SOUNDTRACK = 1;
                 setMusicToLofi();
             }
             if (soundtrackSelected == "AMBIENCE") {
+                SOUNDTRACK = 2;
                 setMusicToAmbience();
             }
             if (soundtrackSelected == "CHILL") {
+                SOUNDTRACK = 3;
                 setMusicToChill();
             }
         });

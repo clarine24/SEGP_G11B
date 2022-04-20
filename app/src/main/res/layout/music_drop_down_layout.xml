@@ -9,6 +9,6 @@
     android:fontFamily="@font/fredoka"
     android:textSize="18dp"
     android:textColor="@color/black"
-    android:textStyle="bold"
+    android:textStyle="normal"
     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1">
 </TextView>
