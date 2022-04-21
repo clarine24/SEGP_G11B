@@ -17,13 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.444"
+
         tools:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <ImageView
         android:id="@+id/exitbuttonmusic"
         android:layout_width="25dp"
         android:layout_height="41dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:clickable="true"
         android:focusable="auto"
         android:src="@drawable/close_icon"
