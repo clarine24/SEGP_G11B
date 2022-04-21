@@ -31,13 +31,14 @@ public abstract class App extends AppCompatActivity {
     ImageView closeButton;
     TextView infoText;
 
-    MediaPlayer musicPlayer;
+    static MediaPlayer musicPlayer;
     ImageView muteMusic;
     ImageView unmuteMusic;
     AutoCompleteTextView music_auto_complete_text;
     ArrayAdapter<String> soundtrackAdapter;
-    int SOUNDTRACK = 1;
+    static int SOUNDTRACK = 1;
     private final static int MAX_VOLUME = 100;
+    static boolean isMute = false;
 
     @Override
     protected void onStart() {
@@ -118,16 +119,17 @@ public abstract class App extends AppCompatActivity {
 
         unmuteMusic.setOnClickListener(v -> {
             muteMusic();
+            isMute = true;
             muteMusic.setVisibility(View.VISIBLE);
             unmuteMusic.setVisibility(View.INVISIBLE);
         });
 
         muteMusic.setOnClickListener(v -> {
             unmuteMusic();
+            isMute = false;
             muteMusic.setVisibility(View.INVISIBLE);
             unmuteMusic.setVisibility(View.VISIBLE);
         });
-
 
         String[] soundtracks = {"LOFI", "AMBIENCE", "CHILL"};
 
@@ -146,6 +148,15 @@ public abstract class App extends AppCompatActivity {
 
         if (SOUNDTRACK == 3) {
             music_auto_complete_text.setHint("CHILL");
+        }
+
+        if (isMute) {
+            muteMusic.setVisibility(VISIBLE);
+            unmuteMusic.setVisibility(INVISIBLE);
+        }
+        else {
+            muteMusic.setVisibility(INVISIBLE);
+            unmuteMusic.setVisibility(VISIBLE);
         }
 
         music_auto_complete_text.setOnItemClickListener((parent, view, position, id) -> {
@@ -167,7 +178,11 @@ public abstract class App extends AppCompatActivity {
 
     private void defaultMusicSetting() {
         musicPlayer.setLooping(true);
-        unmuteMusic();
+        if (isMute) {
+            muteMusic();
+        }
+        else
+            unmuteMusic();
         musicPlayer.start();
     }
 
@@ -200,9 +215,10 @@ public abstract class App extends AppCompatActivity {
     }
 
     private void unmuteMusic() {
-        final float volume = (float) (1 - (Math.log(MAX_VOLUME - 90) / Math.log(MAX_VOLUME)));
+        final float volume = (float) (1 - (Math.log(MAX_VOLUME - 99) / Math.log(MAX_VOLUME)));
         musicPlayer.setVolume(volume, volume);
     }
+
 
     void writeFile() {
         String level = String.valueOf(CBT_Game.level);
