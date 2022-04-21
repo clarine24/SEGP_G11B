@@ -38,14 +38,11 @@ public abstract class App extends AppCompatActivity {
     ImageView closeButton;
     TextView infoText;
 
-    static MediaPlayer musicPlayer;
+    Music music = new Music(this);
     ImageView muteMusic;
     ImageView unmuteMusic;
     AutoCompleteTextView music_auto_complete_text;
     ArrayAdapter<String> soundtrackAdapter;
-    static int SOUNDTRACK = 1;
-    private final static int MAX_VOLUME = 100;
-    static boolean isMute = false;
 
     @Override
     protected void onStart() {
@@ -125,15 +122,15 @@ public abstract class App extends AppCompatActivity {
         unmuteMusic = musicDialog.findViewById(R.id.unmute_music);
 
         unmuteMusic.setOnClickListener(v -> {
-            muteMusic();
-            isMute = true;
+            music.muteMusic();
+            music.setIsMute(true);
             muteMusic.setVisibility(View.VISIBLE);
             unmuteMusic.setVisibility(View.INVISIBLE);
         });
 
         muteMusic.setOnClickListener(v -> {
-            unmuteMusic();
-            isMute = false;
+            music.unmuteMusic();
+            music.setIsMute(false);
             muteMusic.setVisibility(View.INVISIBLE);
             unmuteMusic.setVisibility(View.VISIBLE);
         });
@@ -145,19 +142,20 @@ public abstract class App extends AppCompatActivity {
         music_auto_complete_text.setAdapter(soundtrackAdapter);
         music_auto_complete_text.setHintTextColor(Color.BLACK);
 
-        if (SOUNDTRACK == 1) {
+        if (music.getSOUNDTRACK() == 1) {
             music_auto_complete_text.setHint("LOFI");
         }
 
-        if (SOUNDTRACK == 2) {
+        if (music.getSOUNDTRACK() == 2) {
             music_auto_complete_text.setHint("AMBIENCE");
         }
 
-        if (SOUNDTRACK == 3) {
+        if (music.getSOUNDTRACK() == 3) {
             music_auto_complete_text.setHint("CHILL");
         }
 
-        if (isMute) {
+
+        if (music.getIsMute()) {
             muteMusic.setVisibility(VISIBLE);
             unmuteMusic.setVisibility(INVISIBLE);
         }
@@ -168,64 +166,25 @@ public abstract class App extends AppCompatActivity {
 
         music_auto_complete_text.setOnItemClickListener((parent, view, position, id) -> {
             String soundtrackSelected = parent.getItemAtPosition(position).toString();
+
             if (soundtrackSelected == "LOFI") {
-                SOUNDTRACK = 1;
-                setMusicToLofi();
+                music.setSOUNDTRACK(1);
+                music.setMusicToLofi();
             }
+
             if (soundtrackSelected == "AMBIENCE") {
-                SOUNDTRACK = 2;
-                setMusicToAmbience();
+                music.setSOUNDTRACK(2);
+                music.setMusicToAmbience();
             }
             if (soundtrackSelected == "CHILL") {
-                SOUNDTRACK = 3;
-                setMusicToChill();
+                music.setSOUNDTRACK(3);
+                music.setMusicToChill();
             }
+
+
         });
-    }
 
-    private void defaultMusicSetting() {
-        musicPlayer.setLooping(true);
-        if (isMute) {
-            muteMusic();
-        }
-        else
-            unmuteMusic();
-        musicPlayer.start();
     }
-
-    void playMusic() {
-        musicPlayer = MediaPlayer.create(this, R.raw.lofi);
-        defaultMusicSetting();
-    }
-
-    private void setMusicToLofi() {
-        musicPlayer.stop();
-        musicPlayer = MediaPlayer.create(this, R.raw.lofi);
-        defaultMusicSetting();
-    }
-
-    private void setMusicToAmbience() {
-        musicPlayer.stop();
-        musicPlayer = MediaPlayer.create(this, R.raw.ambience);
-        defaultMusicSetting();
-    }
-
-    private void setMusicToChill() {
-        musicPlayer.stop();
-        musicPlayer = MediaPlayer.create(this, R.raw.chill);
-        defaultMusicSetting();
-    }
-
-    private void muteMusic() {
-        final float volume = (float) (1 - (Math.log(MAX_VOLUME - 0) / Math.log(MAX_VOLUME)));
-        musicPlayer.setVolume(volume, volume);
-    }
-
-    private void unmuteMusic() {
-        final float volume = (float) (1 - (Math.log(MAX_VOLUME - 99) / Math.log(MAX_VOLUME)));
-        musicPlayer.setVolume(volume, volume);
-    }
-
 
     void writeFile() {
         String level = String.valueOf(CBT_Game.level);

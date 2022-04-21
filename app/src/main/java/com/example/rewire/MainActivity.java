@@ -19,7 +19,7 @@ public class MainActivity extends App {
         setHeader();
         header.home_btn.setVisibility(View.INVISIBLE);
 
-        playMusic();
+        music.playMusic();
 
         cbt = findViewById(R.id.cbt_btn);
         bt = findViewById(R.id.breathing_btn);
@@ -40,7 +40,6 @@ public class MainActivity extends App {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        musicPlayer.stop();
-        musicPlayer.release();
+        music.destroyMusic();
     }
 }
