@@ -23,7 +23,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-public abstract class App extends AppCompatActivity {
+public class App extends AppCompatActivity {
     private static final String FILE_NAME = "data.txt";
     String filepath = "";
 
