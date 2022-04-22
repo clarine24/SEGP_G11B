@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class CBT_Sublevel extends App implements View.OnClickListener {
-    static int scene = 1, sceneUnlock;
+    static int scene = 1, sceneUnlock = 1;
     private Button scene_1, scene_2, scene_3;
     private ImageButton lock2, lock3;
 

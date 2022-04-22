@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class CBT_Level extends App implements View.OnClickListener{
-    static int level = 1, levelUnlock;
+    static int level = 1, levelUnlock = 1;
     private Button level1, level2, level3, level4, level5;
     private ImageButton lock2, lock3, lock4, lock5;
 

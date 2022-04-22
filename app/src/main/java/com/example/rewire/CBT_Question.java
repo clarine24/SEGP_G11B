@@ -3,6 +3,7 @@ package com.example.rewire;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -153,14 +154,17 @@ public class CBT_Question extends AppRunning {
     }
 
     private void unlockNextLevel() {
-        if (CBT_Sublevel.scene > 2) {
-            CBT_Level.level++;
-            CBT_Sublevel.scene = 1;
-        }
-        else {
-            CBT_Sublevel.scene++;
-        }
+        if (CBT_Sublevel.sceneUnlock == CBT_Sublevel.scene && CBT_Level.levelUnlock == CBT_Level.levelUnlock) {
+            if (CBT_Sublevel.scene > 2) {
+                CBT_Level.level++;
+                CBT_Sublevel.scene = 1;
+            }
+            else {
+                CBT_Sublevel.scene++;
+            }
 
-        writeFile();
+            Log.v("Write","Y");
+            writeFile();
+        }
     }
 }

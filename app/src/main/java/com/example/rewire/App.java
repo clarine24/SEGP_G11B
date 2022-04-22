@@ -24,8 +24,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public abstract class App extends AppCompatActivity {
-    //private static final String FILE_NAME = "data.txt";
-
     private static final String FILE_NAME = "data.txt";
     String filepath = "";
     String fileContent = "";
@@ -188,36 +186,29 @@ public abstract class App extends AppCompatActivity {
         String scene = String.valueOf(CBT_Sublevel.scene);
 
         File myExternalFile = new File(this.getExternalFilesDir(filepath), FILE_NAME);
-                // Create an object of FileOutputStream for writing data to myFile.txt
         FileOutputStream fos = null;
         try {
-                    // Instantiate the FileOutputStream object and pass myExternalFile in constructor
-                    fos = new FileOutputStream(myExternalFile);
-                    // Write to the file
-                    fos.write(level.getBytes());
-                    fos.write("\n".getBytes());
-                    fos.write(scene.getBytes());
-                    // Close the stream
-                    fos.close();
+            // Instantiate the FileOutputStream object and pass myExternalFile in constructor
+            fos = new FileOutputStream(myExternalFile);
+
+            // Write to the file
+            fos.write(level.getBytes());
+            fos.write("\n".getBytes());
+            fos.write(scene.getBytes());
+
+            // Close the stream
+            fos.close();
         } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+            e.printStackTrace();
         } catch (IOException e) {
-                    e.printStackTrace();
+            e.printStackTrace();
         }
-                // Clear the EditText
-                //etInput.setText("");
-                // Show a Toast message to inform the user that the operation has been successfully completed.
-                //Toast.makeText(MainActivity.this, "Information saved to SD card.", Toast.LENGTH_SHORT).show();
     }
 
 
     void readFile() {
         FileReader fr;
         File myExternalFile = new File(this.getExternalFilesDir(filepath), FILE_NAME);
-        // Instantiate a StringBuilder object. This class is an alternative to String Class
-        // and it is mutable, has methods such as append(), insert(), or replace() that allow to
-        // modify strings. Hence it is more efficient.
-        StringBuilder stringBuilder = new StringBuilder();
         try {
             String text;
             fr = new FileReader(myExternalFile);
@@ -233,23 +224,11 @@ public abstract class App extends AppCompatActivity {
             text = br.readLine();
             CBT_Sublevel.sceneUnlock = Integer.valueOf(text);
 
-            // Use a while loop to read the entire file
-            while(text != null){
-                // Append the line read to StringBuilder object. Also, append a new-line
-                stringBuilder.append(text).append('\n');
-                // Again read the next line and store in variable line
-                text = br.readLine();
-            }
+            fr.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            // Convert the StringBuilder content into String and add text "File contents\n"
-            // at the beginning.
-            //String fileContents = "File contents\n" + stringBuilder.toString();
-            // Set the TextView with fileContents
-            //tvLoad.setText(fileContents);
         }
     }
 }

@@ -14,7 +14,6 @@ public class MainMenu extends App {
         setContentView(R.layout.main_menu);
 
         readFile();
-        //writeFile();
 
         setHeader();
         header.home_btn.setVisibility(View.INVISIBLE);
