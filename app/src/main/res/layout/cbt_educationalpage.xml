@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_pink"
-    tools:context=".in_game_educationalpage">
+    tools:context=".CBT_EducationalPage">
 
     <com.example.rewire.Header
         android:id="@+id/header"

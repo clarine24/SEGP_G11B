@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CBT_Game"
+    tools:context=".CBT_Level"
     android:background="@color/light_pink">
 
     <com.example.rewire.Header

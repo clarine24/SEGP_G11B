@@ -4,12 +4,12 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.widget.TextView;
 
-public class RoundProgress extends Timer {
+public class TotalProgressTimer extends Timer {
     private Handler roundHandler;
     private Runnable roundRunnable;
     private TextView round;
 
-    public RoundProgress(BT_main bt_main) {
+    public TotalProgressTimer(BT_Main bt_main) {
         super(bt_main, bt_main.roundProgressBar);
         round = bt_main.round;
         roundHandler = new Handler();

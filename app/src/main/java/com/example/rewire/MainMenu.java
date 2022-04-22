@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends App {
+public class MainMenu extends App {
     Button cbt, bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_menu);
 
         readFile();
         //writeFile();
@@ -28,12 +28,12 @@ public class MainActivity extends App {
     }
 
     private void startCBT() {
-        Intent intent = new Intent(MainActivity.this, CBT_Game.class);
+        Intent intent = new Intent(MainMenu.this, CBT_Level.class);
         startActivity(intent);
     }
 
     private void startBT() {
-        Intent intent = new Intent(MainActivity.this, BT_main.class);
+        Intent intent = new Intent(MainMenu.this, BT_Main.class);
         startActivity(intent);
     }
 

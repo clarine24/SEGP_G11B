@@ -4,7 +4,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.widget.TextView;
 
-public class TimerProgress extends Timer {
+public class StepTimer extends Timer {
     private Handler timerHandler;
     private Runnable timerRunnable = () -> {
         newTimer(4000,20);
@@ -12,7 +12,7 @@ public class TimerProgress extends Timer {
     };
     private TextView time, state, instruction;
 
-    public TimerProgress(BT_main bt_main) {
+    public StepTimer(BT_Main bt_main) {
         super(bt_main,bt_main.timerProgressBar);
 
         time = bt_main.time;
@@ -25,8 +25,8 @@ public class TimerProgress extends Timer {
     @Override
     void createTimer(int d, int i) {
         interval = i;
-        state.setText(BT_main.stateStr);
-        instruction.setText(BT_main.instructStr);
+        state.setText(BT_Main.stateStr);
+        instruction.setText(BT_Main.instructStr);
 
         timer = new CountDownTimer(d,i) {
             @Override

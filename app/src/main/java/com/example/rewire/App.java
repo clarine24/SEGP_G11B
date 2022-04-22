@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.media.MediaPlayer;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,12 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public abstract class App extends AppCompatActivity {
     //private static final String FILE_NAME = "data.txt";
@@ -76,7 +73,7 @@ public abstract class App extends AppCompatActivity {
 
     void toHomeMenu() {
         initButtonView();
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 
@@ -103,19 +100,19 @@ public abstract class App extends AppCompatActivity {
     }
 
     void setInfoDialog() {
-        initDialog(infoDialog,R.layout.about_pop_up);
+        initDialog(infoDialog,R.layout.about_popup);
         initCloseImageView(infoDialog,R.id.exitbuttoninfo);
         initText(infoDialog,R.id.about_info);
     }
 
     private void setDocDialog() {
-        initDialog(docDialog,R.layout.documentation_pop_up);
+        initDialog(docDialog,R.layout.documentation_popup);
         initCloseImageView(docDialog,R.id.exitbuttondoc);
         initText(docDialog,R.id.documentationInfo);
     }
 
     void setMusicDialog() {
-        initDialog(musicDialog,R.layout.music_pop_up);
+        initDialog(musicDialog,R.layout.music_popup);
         initCloseImageView(musicDialog,R.id.exitbuttonmusic);
 
         muteMusic = musicDialog.findViewById(R.id.mute_music);
@@ -138,7 +135,7 @@ public abstract class App extends AppCompatActivity {
         String[] soundtracks = {"LOFI", "AMBIENCE", "CHILL"};
 
         music_auto_complete_text = musicDialog.findViewById(R.id.music_auto_complete_text);
-        soundtrackAdapter = new ArrayAdapter<String>(this, R.layout.music_drop_down_layout, soundtracks);
+        soundtrackAdapter = new ArrayAdapter<String>(this, R.layout.music_drop_down, soundtracks);
         music_auto_complete_text.setAdapter(soundtrackAdapter);
         music_auto_complete_text.setHintTextColor(Color.BLACK);
 
@@ -187,7 +184,7 @@ public abstract class App extends AppCompatActivity {
     }
 
     void writeFile() {
-        String level = String.valueOf(CBT_Game.level);
+        String level = String.valueOf(CBT_Level.level);
         String scene = String.valueOf(CBT_Sublevel.scene);
 
         File myExternalFile = new File(this.getExternalFilesDir(filepath), FILE_NAME);
@@ -230,7 +227,7 @@ public abstract class App extends AppCompatActivity {
 
             // Save last unlocked level
             text = br.readLine();
-            CBT_Game.levelUnlock = Integer.valueOf(text);
+            CBT_Level.levelUnlock = Integer.valueOf(text);
 
             // Save last unlocked scene
             text = br.readLine();

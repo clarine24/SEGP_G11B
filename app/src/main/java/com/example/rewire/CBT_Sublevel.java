@@ -15,12 +15,12 @@ public class CBT_Sublevel extends App implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cbt_sublevel);
+        setContentView(R.layout.cbt_sublevel);
 
         setHeader();
 
         TextView title = findViewById(R.id.title);
-        title.setText("LEVEL " + CBT_Game.level);
+        title.setText("LEVEL " + CBT_Level.level);
 
         scene_1 = findViewById(R.id.scenario1);
         scene_2 = findViewById(R.id.scenario2);
@@ -42,7 +42,7 @@ public class CBT_Sublevel extends App implements View.OnClickListener {
 
     private void unlockScene() {
         // All scenes unlocked for completed levels
-        if (CBT_Game.level < CBT_Game.levelUnlock) {
+        if (CBT_Level.level < CBT_Level.levelUnlock) {
             sceneUnlock = 3;
         }
 
@@ -70,7 +70,7 @@ public class CBT_Sublevel extends App implements View.OnClickListener {
                 break;
         }
 
-        Intent intent = new Intent(CBT_Sublevel.this, in_game_educationalpage.class);
+        Intent intent = new Intent(CBT_Sublevel.this, CBT_EducationalPage.class);
         startActivity(intent);
     }
 }

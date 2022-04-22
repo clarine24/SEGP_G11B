@@ -3,18 +3,12 @@ package com.example.rewire;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-
-public class cbt_qa extends AppRunning {
+public class CBT_Question extends AppRunning {
     private Dialog completeDialog;
     private TextView question;
     private Button optionA, optionB, optionC, toLevelMenu;
@@ -26,7 +20,7 @@ public class cbt_qa extends AppRunning {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cbt_question_answer);
+        setContentView(R.layout.cbt_question_answer);
 
         completeDialog = new Dialog(this);
         completeDialog.setCanceledOnTouchOutside(false);
@@ -54,21 +48,21 @@ public class cbt_qa extends AppRunning {
     @Override
     protected void onStart() {
         super.onStart();
-        int ansID = this.getResources().getIdentifier(in_game_educationalpage.id + "_Ans", "string", this.getPackageName());
+        int ansID = this.getResources().getIdentifier(CBT_EducationalPage.id + "_Ans", "string", this.getPackageName());
         ans = getResources().getString(ansID);
         displayQuestion();
         displayOptions();
     }
 
     private void displayQuestion() {
-        questionID = this.getResources().getIdentifier(in_game_educationalpage.id + "_Question", "string", this.getPackageName());
+        questionID = this.getResources().getIdentifier(CBT_EducationalPage.id + "_Question", "string", this.getPackageName());
         question.setText(questionID);
     }
 
     private void displayOptions() {
-        optionAID = this.getResources().getIdentifier(in_game_educationalpage.id + "_OptionA", "string", this.getPackageName());
-        optionBID = this.getResources().getIdentifier(in_game_educationalpage.id + "_OptionB", "string", this.getPackageName());
-        optionCID = this.getResources().getIdentifier(in_game_educationalpage.id + "_OptionC", "string", this.getPackageName());
+        optionAID = this.getResources().getIdentifier(CBT_EducationalPage.id + "_OptionA", "string", this.getPackageName());
+        optionBID = this.getResources().getIdentifier(CBT_EducationalPage.id + "_OptionB", "string", this.getPackageName());
+        optionCID = this.getResources().getIdentifier(CBT_EducationalPage.id + "_OptionC", "string", this.getPackageName());
 
         optionA.setText(optionAID);
         optionB.setText(optionBID);
@@ -141,26 +135,26 @@ public class cbt_qa extends AppRunning {
     }
 
     private void showCompleteDialog() {
-        initDialog(completeDialog, R.layout.complete_level_popup);
+        initDialog(completeDialog, R.layout.level_complete_popup);
 
         toLevelMenu = completeDialog.findViewById(R.id.selectlevel);
         toLevelMenu.setOnClickListener(view -> {
             completeDialog.dismiss();
-            Intent intent = new Intent(cbt_qa.this, CBT_Game.class);
+            Intent intent = new Intent(CBT_Question.this, CBT_Level.class);
             startActivity(intent);
         });
 
         exitButton = completeDialog.findViewById(R.id.closeButton);
         exitButton.setOnClickListener(view -> {
             completeDialog.dismiss();
-            Intent intent = new Intent(cbt_qa.this, MainActivity.class);
+            Intent intent = new Intent(CBT_Question.this, MainMenu.class);
             startActivity(intent);
         });
     }
 
     private void unlockNextLevel() {
         if (CBT_Sublevel.scene > 2) {
-            CBT_Game.level++;
+            CBT_Level.level++;
             CBT_Sublevel.scene = 1;
         }
         else {

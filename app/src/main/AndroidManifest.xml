@@ -15,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rewire">
         <activity
-            android:name=".BT_main"
+            android:name=".BT_Main"
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
-            android:name=".CBT_Game"
+            android:name=".CBT_Level"
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
@@ -27,15 +27,15 @@
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
-            android:name=".in_game_educationalpage"
+            android:name=".CBT_EducationalPage"
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
-            android:name=".cbt_qa"
+            android:name=".CBT_Question"
             android:exported="true"
             android:launchMode="singleTask"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".MainMenu"
             android:exported="true"
             android:launchMode="singleInstance">
             <intent-filter>

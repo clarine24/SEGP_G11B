@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class CBT_Game extends App implements View.OnClickListener{
+public class CBT_Level extends App implements View.OnClickListener{
     static int level = 1, levelUnlock;
     private Button level1, level2, level3, level4, level5;
     private ImageButton lock2, lock3, lock4, lock5;
@@ -14,7 +14,7 @@ public class CBT_Game extends App implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cbt_game);
+        setContentView(R.layout.cbt_level);
 
         setHeader();
 
@@ -80,7 +80,7 @@ public class CBT_Game extends App implements View.OnClickListener{
                 break;
         }
 
-        Intent intent = new Intent(CBT_Game.this, CBT_Sublevel.class);
+        Intent intent = new Intent(CBT_Level.this, CBT_Sublevel.class);
         startActivity(intent);
     }
 }

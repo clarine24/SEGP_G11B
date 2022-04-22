@@ -5,12 +5,12 @@ import android.widget.ProgressBar;
 
 public abstract class Timer {
     CountDownTimer timer;
-    BT_main bt_main;
+    BT_Main bt_main;
     ProgressBar progressBar;
     int interval;
     long remainTime;
 
-    public Timer(BT_main bt_main, ProgressBar progressBar) {
+    public Timer(BT_Main bt_main, ProgressBar progressBar) {
         this.bt_main = bt_main;
         this.progressBar = progressBar;
     }

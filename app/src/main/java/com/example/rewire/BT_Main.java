@@ -9,7 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class BT_main extends AppRunning {
+public class BT_Main extends AppRunning {
     private Dialog startPrompt, endPrompt;
     private Button startButton, restartButton;
     private SeekBar seekBar;
@@ -17,8 +17,8 @@ public class BT_main extends AppRunning {
     private int roundsNum;
 
     private final int inhaleTime = 4, holdTime = 7, exhaleTime = 8;
-    private TimerProgress timerProgress;
-    private RoundProgress roundProgress;
+    private StepTimer stepTimer;
+    private TotalProgressTimer totalProgressTimer;
     TextView time, round, state, instruction;
     ProgressBar timerProgressBar, roundProgressBar;
     int timeType, maxRound;
@@ -34,7 +34,7 @@ public class BT_main extends AppRunning {
         endPrompt.setCanceledOnTouchOutside(false);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_breathing_technique_main);
+        setContentView(R.layout.breathing_technique_main);
 
         setHeader();
 
@@ -42,24 +42,24 @@ public class BT_main extends AppRunning {
         time = findViewById(R.id.bt_seconds);
         state = findViewById(R.id.bt_state);
         instruction = findViewById(R.id.bt_instruction);
-        timerProgress = new TimerProgress(this);
+        stepTimer = new StepTimer(this);
 
         roundProgressBar = findViewById(R.id.total_progress);
         round = findViewById(R.id.round);
-        roundProgress = new RoundProgress(this);
+        totalProgressTimer = new TotalProgressTimer(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         setStartPrompt();
-        timerProgress.resetProgressBar(1);
-        roundProgress.resetProgressBar(1);
+        stepTimer.resetProgressBar(1);
+        totalProgressTimer.resetProgressBar(1);
         round.setText("");
     }
 
     private void setStartPrompt() {
-        startPrompt.setContentView(R.layout.activity_breathing_technique_start_prompt);
+        startPrompt.setContentView(R.layout.breathing_technique_start_prompt);
         startPrompt.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         seekBar = startPrompt.findViewById(R.id.bt_input_seekBar);
@@ -93,7 +93,7 @@ public class BT_main extends AppRunning {
     }
 
     void setEndPrompt() {
-        endPrompt.setContentView(R.layout.activity_breathing_technique_end_prompt);
+        endPrompt.setContentView(R.layout.breathing_technique_end_prompt);
         endPrompt.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         restartButton = endPrompt.findViewById(R.id.restart_btn);
@@ -120,8 +120,8 @@ public class BT_main extends AppRunning {
 
     @Override
     void exitOnClick(Dialog dialog) {
-        timerProgress.resetProgressBar(1);
-        roundProgress.resetProgressBar(1);
+        stepTimer.resetProgressBar(1);
+        totalProgressTimer.resetProgressBar(1);
         round.setText("");
         super.exitOnClick(dialog);
         finish();
@@ -141,17 +141,17 @@ public class BT_main extends AppRunning {
         if (timeType == 1) {
             stateStr = "Ready";
             instructStr = "";
-            timerProgress.readyTimer();
+            stepTimer.readyTimer();
         }
         else if (timeType == 3) {
             stateStr = "Hold";
             instructStr = "";
-            timerProgress.holdTimer();
+            stepTimer.holdTimer();
         }
         else if (timeType == 4) {
             stateStr = "Exhale";
             instructStr = "Through the Mouth";
-            timerProgress.exhaleTimer();
+            stepTimer.exhaleTimer();
         }
         else if (timeType == 5) {
             currentRound++;
@@ -167,7 +167,7 @@ public class BT_main extends AppRunning {
         if (timeType == 2) {
             stateStr = "Inhale";
             instructStr = "Through the Nose";
-            timerProgress.inhaleTimer();
+            stepTimer.inhaleTimer();
         }
     }
 
@@ -181,20 +181,20 @@ public class BT_main extends AppRunning {
 
     public void setNewRound() {
         if (!roundStart) {
-            roundProgress.waitTimer();
+            totalProgressTimer.waitTimer();
         }
         else {
-            roundProgress.roundTimer();
+            totalProgressTimer.roundTimer();
         }
     }
 
     private void pauseTimers() {
-        timerProgress.stopTimer();
-        roundProgress.stopTimer();
+        stepTimer.stopTimer();
+        totalProgressTimer.stopTimer();
     }
 
     private void resumeTimers() {
-        timerProgress.resumeTimer();
-        roundProgress.resumeTimer();
+        stepTimer.resumeTimer();
+        totalProgressTimer.resumeTimer();
     }
 }
