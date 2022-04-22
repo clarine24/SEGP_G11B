@@ -3,8 +3,6 @@ package com.example.rewire;
 import android.content.Context;
 import android.media.MediaPlayer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class Music {
     private Context context;
     private static MediaPlayer musicPlayer;

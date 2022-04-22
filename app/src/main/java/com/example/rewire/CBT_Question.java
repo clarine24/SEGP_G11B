@@ -3,7 +3,6 @@ package com.example.rewire;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -162,8 +161,6 @@ public class CBT_Question extends AppRunning {
             else {
                 CBT_Sublevel.scene++;
             }
-
-            Log.v("Write","Y");
             writeFile();
         }
     }

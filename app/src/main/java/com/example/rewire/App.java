@@ -26,7 +26,6 @@ import java.io.IOException;
 public abstract class App extends AppCompatActivity {
     private static final String FILE_NAME = "data.txt";
     String filepath = "";
-    String fileContent = "";
 
     Header header;
     Dialog infoDialog, docDialog, musicDialog;
