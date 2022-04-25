@@ -1,3 +1,5 @@
+//No open source code or third-party libraries were used in this class.
+//This class contains only original source code
 package com.example.rewire;
 
 import android.content.Context;
@@ -7,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+// Where all the classes to make the header is found
+//
 public class Header extends ConstraintLayout {
     public ImageView hbg_menu;
     public ImageView hbg_menu_info;
@@ -15,22 +19,27 @@ public class Header extends ConstraintLayout {
     public ImageView hbg_menu_close;
     public ImageView home_btn;
 
+    //
     public Header(Context context) {
         super(context);
     }
 
+    //
     public Header(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
+    //
     public Header(Context context, AttributeSet attributeSet, int defStyle) {
         super(context, attributeSet, defStyle);
     }
-
+    //calls the inflateHeader class
     public void initHeader() {
         inflateHeader();
     }
 
+    // Takes the layout xml files and creates the view objects from it
+    // Hbg menu is made visible here
     private void inflateHeader() {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.header, this);
