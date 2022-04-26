@@ -24,7 +24,7 @@ public class CBT_Question extends AppRunning {
 
     // Called when CBT question page activity is starting
     // Initialise variables used by CBT_Question class
-    // Connect page to header and initializes question dialogs
+    // Connect page to header and initializes the dialogs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,7 +136,7 @@ public class CBT_Question extends AppRunning {
     }
 
     // Method to flash the red color if the answer is incorrect and recolors the option to its original color
-    // and re-displays the option's text on the button
+    // Re-displays the option's text on the button
     private void showIncorrectAnswer(Button option, ImageView icon) {
         showAnswer(option, icon);
         option.setBackgroundColor(getResources().getColor(R.color.dark_red));
@@ -153,12 +153,12 @@ public class CBT_Question extends AppRunning {
         icon.setVisibility(View.INVISIBLE);
     }
 
-    // re-displays the option's text (only applicable when the incorrect answer is chosen)
+    // Re-displays the option's text (only applicable when the incorrect answer is chosen)
     private void changeText(Button option, String string) {
         option.setText(string);
     }
 
-    // Method to display 'Congratulations' Dialog if correct answer is chosen
+    // Method to display 'Congratulations' Dialog
     private void showCompleteDialog() {
         initDialog(completeDialog, R.layout.level_complete_popup);
 
@@ -177,7 +177,7 @@ public class CBT_Question extends AppRunning {
         });
     }
 
-    // Method to unlock next level if correct answer is obtained and writes to file for progress
+    // Method to unlock next level and writes to file save the progress
     private void unlockNextLevel() {
         if (CBT_Sublevel.sceneUnlock == CBT_Sublevel.scene && CBT_Level.levelUnlock == CBT_Level.levelUnlock) {
             if (CBT_Sublevel.scene > 2) {

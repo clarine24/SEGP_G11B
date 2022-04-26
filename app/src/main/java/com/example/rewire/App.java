@@ -43,7 +43,7 @@ public class App extends AppCompatActivity {
     AutoCompleteTextView music_auto_complete_text;
     ArrayAdapter<String> soundtrackAdapter;
 
-    // Called when any of the dialogs is starting
+    // Called when any activity that extends the App class is starting
     // Show the hamburger menu icon and hide the information, documentation, music, and close icon
     @Override
     protected void onStart() {
@@ -198,10 +198,7 @@ public class App extends AppCompatActivity {
                 music.setSOUNDTRACK(3);
                 music.setMusicToChill();
             }
-
-
         });
-
     }
 
     // Write the progress of CBT to a text file
@@ -238,13 +235,11 @@ public class App extends AppCompatActivity {
             fr = new FileReader(myExternalFile);
             BufferedReader br = new BufferedReader(fr);
 
-            // Next, call readLine() method on BufferedReader object to read a line of text.
-
-            // Save last unlocked level
+            // Read last unlocked level
             text = br.readLine();
             CBT_Level.levelUnlock = Integer.valueOf(text);
 
-            // Save last unlocked scene
+            // Read last unlocked scene
             text = br.readLine();
             CBT_Sublevel.sceneUnlock = Integer.valueOf(text);
 

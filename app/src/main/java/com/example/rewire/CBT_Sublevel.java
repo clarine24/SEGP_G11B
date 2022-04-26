@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-// Extends App class that is used to store progress
-// Implements the OnClickListener for user clicks interaction
+// CBT_Sublevel class is a subclass of App
+// This is the class used to implement the sublevel page
 public class CBT_Sublevel extends App implements View.OnClickListener {
     static int scene = 1, sceneUnlock = 1;
     private Button scene_1, scene_2, scene_3;
@@ -68,7 +68,7 @@ public class CBT_Sublevel extends App implements View.OnClickListener {
         }
     }
 
-    // Listens to user clicks when pressing on sublevels
+    // Listens to user clicks when selecting the sublevels
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

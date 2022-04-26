@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 // Extends App class that is used to store progress
-// Implements the OnClickListener for user clicks interaction
 public class CBT_Level extends App implements View.OnClickListener{
     static int level = 1, levelUnlock = 1;
     private Button level1, level2, level3, level4, level5;
@@ -37,8 +36,7 @@ public class CBT_Level extends App implements View.OnClickListener{
         level3.setOnClickListener(this);
         level4.setOnClickListener(this);
         level5.setOnClickListener(this);
-
-        // Locks level 2-5 initially
+        
         lock2 = findViewById(R.id.level2_lock);
         lock3 = findViewById(R.id.level3_lock);
         lock4 = findViewById(R.id.level4_lock);

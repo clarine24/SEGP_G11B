@@ -1,7 +1,6 @@
 // No open source code or third-party libraries were used in this class.
 // This class contains only original source code.
 
-
 package com.example.rewire;
 
 import android.content.Intent;
@@ -17,8 +16,7 @@ public class CBT_EducationalPage extends AppRunning {
     static String level, scene, id;
     ImageView next;
 
-
-    // Called when CBT educational page activity is starting
+    // Called when CBT educational page activity is created
     // Initialise variables used by CBT_EducationalPage class
     // Connect page to header
     @Override
@@ -46,8 +44,8 @@ public class CBT_EducationalPage extends AppRunning {
         displayText();
     }
 
-    // Called by onStart to display text
-    // gets the desired educational info text by IDs of the cbt_string.xml file in resource folder
+    // Display text
+    // Gets the desired educational info text by IDs from the cbt_string.xml file in resource folder
     private void displayText() {
         int titleID = this.getResources().getIdentifier(id + "_Title", "string", this.getPackageName());
         int infoID = this.getResources().getIdentifier(id + "_Info", "string", this.getPackageName());
