@@ -1,3 +1,6 @@
+// No open source code or third-party libraries were used in this class.
+// This class contains only original source code.
+
 package com.example.rewire;
 
 import static android.view.View.INVISIBLE;
@@ -23,6 +26,8 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
+// App class is a subclass of AppCompatActivity
+// It is used to initialize the dialogs, as well as to store the progress of CBT
 public class App extends AppCompatActivity {
     private static final String FILE_NAME = "data.txt";
     String filepath = "";
@@ -38,12 +43,15 @@ public class App extends AppCompatActivity {
     AutoCompleteTextView music_auto_complete_text;
     ArrayAdapter<String> soundtrackAdapter;
 
+    // Called when any of the dialogs is starting
+    // Show the hamburger menu icon and hide the information, documentation, music, and close icon
     @Override
     protected void onStart() {
         initButtonView();
         super.onStart();
     }
 
+    // Show the hamburger menu icon and hide the information, documentation, music, and close icon
     void initButtonView() {
         header.hbg_menu_info.setVisibility(INVISIBLE);
         header.hbg_menu_doc.setVisibility(INVISIBLE);
@@ -52,6 +60,8 @@ public class App extends AppCompatActivity {
         header.hbg_menu.setVisibility(VISIBLE);
     }
 
+    // Activate the header
+    // Connect the information, documentation, and music to their respective dialogs
     void setHeader() {
         header = findViewById(R.id.header);
         header.initHeader();
@@ -68,12 +78,16 @@ public class App extends AppCompatActivity {
         header.hbg_menu_music.setOnClickListener(view -> setMusicDialog());
     }
 
+    // Switch the interface to main menu
     void toHomeMenu() {
         initButtonView();
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 
+    // Initialize the dialog
+    // Show the hamburger menu icon and hide the information, documentation, music, and close icon
+    // Set the background of the dialog to transparent
     void initDialog(Dialog dialog, int viewID) {
         initButtonView();
         dialog.setContentView(viewID);
@@ -81,33 +95,40 @@ public class App extends AppCompatActivity {
         dialog.show();
     }
 
+    // Initialize the close button for the dialog
     private void initCloseImageView(Dialog dialog, int closeButtonID) {
         closeButton = dialog.findViewById(closeButtonID);
         closeButton.setOnClickListener(v -> closeDialog(dialog));
     }
 
+    // Write a text to the dialog
     private void initText(Dialog dialog, int infoID) {
         infoText = dialog.findViewById(infoID);
         infoText.setMovementMethod(LinkMovementMethod.getInstance());
         infoText.setLinkTextColor(getResources().getColor(R.color.teal_700));
     }
 
+    // Dismiss the dialog
     void closeDialog(Dialog dialog) {
         dialog.dismiss();
     }
 
+    // Initialize the information dialog
     void setInfoDialog() {
         initDialog(infoDialog,R.layout.about_popup);
         initCloseImageView(infoDialog,R.id.exitbuttoninfo);
         initText(infoDialog,R.id.about_info);
     }
 
+    // Initialize the documentation dialog
     private void setDocDialog() {
         initDialog(docDialog,R.layout.documentation_popup);
         initCloseImageView(docDialog,R.id.exitbuttondoc);
         initText(docDialog,R.id.documentationInfo);
     }
 
+    // Initialize the music dialog
+    // Set button listener for the mute icon
     void setMusicDialog() {
         initDialog(musicDialog,R.layout.music_popup);
         initCloseImageView(musicDialog,R.id.exitbuttonmusic);
@@ -129,6 +150,7 @@ public class App extends AppCompatActivity {
             unmuteMusic.setVisibility(View.VISIBLE);
         });
 
+        // Create a drop down menu
         String[] soundtracks = {"LOFI", "AMBIENCE", "CHILL"};
 
         music_auto_complete_text = musicDialog.findViewById(R.id.music_auto_complete_text);
@@ -136,6 +158,7 @@ public class App extends AppCompatActivity {
         music_auto_complete_text.setAdapter(soundtrackAdapter);
         music_auto_complete_text.setHintTextColor(Color.BLACK);
 
+        // Set the hint text of the drop down menu to the current soundtrack
         if (music.getSOUNDTRACK() == 1) {
             music_auto_complete_text.setHint("LOFI");
         }
@@ -148,7 +171,7 @@ public class App extends AppCompatActivity {
             music_auto_complete_text.setHint("CHILL");
         }
 
-
+        // update the music icon according to the mute music indicator
         if (music.getIsMute()) {
             muteMusic.setVisibility(VISIBLE);
             unmuteMusic.setVisibility(INVISIBLE);
@@ -158,6 +181,7 @@ public class App extends AppCompatActivity {
             unmuteMusic.setVisibility(VISIBLE);
         }
 
+        // Set the background music according to the drop down menu
         music_auto_complete_text.setOnItemClickListener((parent, view, position, id) -> {
             String soundtrackSelected = parent.getItemAtPosition(position).toString();
 
@@ -180,6 +204,7 @@ public class App extends AppCompatActivity {
 
     }
 
+    // Write the progress of CBT to a text file
     void writeFile() {
         String level = String.valueOf(CBT_Level.level);
         String scene = String.valueOf(CBT_Sublevel.scene);
@@ -204,7 +229,7 @@ public class App extends AppCompatActivity {
         }
     }
 
-
+    // Read the previous progress of CBT from a text file
     void readFile() {
         FileReader fr;
         File myExternalFile = new File(this.getExternalFilesDir(filepath), FILE_NAME);
