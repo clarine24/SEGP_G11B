@@ -1,3 +1,6 @@
+// No open source code or third-party libraries were used in this class.
+// This class contains only original source code.
+
 package com.example.rewire;
 
 import android.content.Intent;
@@ -6,11 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+// Extends App class that is used to store progress
+// Implements the OnClickListener for user clicks interaction
 public class CBT_Level extends App implements View.OnClickListener{
     static int level = 1, levelUnlock = 1;
     private Button level1, level2, level3, level4, level5;
     private ImageButton lock2, lock3, lock4, lock5;
 
+    // Called when CBT level page activity is starting
+    // Initialise variables used by CBT_Level class
+    // Connect page to header
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +38,15 @@ public class CBT_Level extends App implements View.OnClickListener{
         level4.setOnClickListener(this);
         level5.setOnClickListener(this);
 
+        // Locks level 2-5 initially
         lock2 = findViewById(R.id.level2_lock);
         lock3 = findViewById(R.id.level3_lock);
         lock4 = findViewById(R.id.level4_lock);
         lock5 = findViewById(R.id.level5_lock);
     }
 
+    // Called when the CBT Level page is displayed to users
+    // Gets the proper levels to be unlocked and reads progress
     @Override
     protected void onStart() {
         readFile();
@@ -43,6 +54,7 @@ public class CBT_Level extends App implements View.OnClickListener{
         super.onStart();
     }
 
+    // Unlocks levels according to the switch statement
     private void unlockLevel() {
         switch (levelUnlock) {
             case 5:
@@ -60,6 +72,7 @@ public class CBT_Level extends App implements View.OnClickListener{
         }
     }
 
+    // Assigns level to be viewed to the level variable
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -80,6 +93,7 @@ public class CBT_Level extends App implements View.OnClickListener{
                 break;
         }
 
+        // Starts the CBT_sublevel activity when a level is pressed and dismisses the CBT_Level
         Intent intent = new Intent(CBT_Level.this, CBT_Sublevel.class);
         startActivity(intent);
     }
